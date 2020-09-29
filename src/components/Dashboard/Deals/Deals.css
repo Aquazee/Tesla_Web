@@ -1,0 +1,61 @@
+.DItem {
+    width:200px;
+    /* height:250px; */
+    background: #fff;
+    margin: 10px 0px;
+    cursor:pointer;
+}
+
+#Deals{
+    position: relative;
+}
+
+#Deals > .larrow {
+    position: absolute;
+    /* left: 0; */
+    height: 93%;
+    display: flex;
+    font-size: 35px;
+    align-items: center;
+    color: #888;
+    background: #fff;
+    top: 11px;
+    left: 5px;
+    padding: 0px 13px;
+}
+
+.DRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.warrow{
+    padding: 0px 51px;
+}
+
+.DItem > h5{
+    color:#6b6b6b
+}
+
+.DItem > h6{
+    color:#868585
+}
+
+.DItem > p{
+    color: #5abb5d;
+}
+
+.DItem > img{
+    width: 199px;
+    height: 168px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.DItem > .content{
+    padding: 10px;
+    text-align: center;
+}

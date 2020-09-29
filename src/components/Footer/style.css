@@ -1,0 +1,30 @@
+
+
+.footer{
+    background-color : #172337;
+    padding : 25px 50px
+}
+
+.transparent{
+    background-color : transparent;
+    display: block;
+    padding: 3px 15px;
+}
+
+.listitem{
+    font-weight: 400;
+    font-size: 12px;
+    color: #fff;
+}
+
+.footerBtmlistitem {
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    margin-right:50px
+}
+
+.header{
+    color : #c4bebe;
+    background-color : transparent;
+}

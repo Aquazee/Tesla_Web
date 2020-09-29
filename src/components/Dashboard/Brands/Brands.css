@@ -1,0 +1,19 @@
+.BItem{
+    margin: 10px;
+}
+.BItem > img{
+    width: 100%;
+    height: 100%;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.BRow{
+    height: 233px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

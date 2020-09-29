@@ -1,0 +1,90 @@
+
+
+.image_list li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    padding: 0px;
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    overflow: hidden
+}
+
+.image_list li:last-child {
+    margin-bottom: 0
+}
+
+.image_list li:hover {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3)
+}
+
+.image_list li img {
+    max-width: 100%
+}
+
+
+/* Button Colors */
+
+.golden-color{
+    background-color: #ff9f00 !important;
+    border-color: #ff9f00 !important;
+}
+
+.green-color{
+  background-color: #40bd45 !important;
+  border-color: #40bd45 !important;
+}
+
+
+.shop-button {
+    height: 47px;
+    border-radius:0px !important;
+    text-transform: uppercase;
+    color:#fff !important ;
+}
+
+#ShowcaseCont{
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Zoom Image css */
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    width: 400px;
+    height: 425px;
+    position: absolute;
+    right: -400px;
+    top: 0;
+    z-index: 1;
+}

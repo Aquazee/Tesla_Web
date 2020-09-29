@@ -1,0 +1,53 @@
+.form-check > label{
+    font-size: 14px;
+    margin-left: 1.5em;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.productList{
+    background-color: #fff;
+}
+
+
+.pddh-15{
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.pddv-15{
+    padding-top:15px ;
+    padding-bottom:15px ;
+}
+
+body {
+    background-color: #f7f8f9;
+}
+
+.Account-side_sect{
+    background-color: #fff;
+    width: 100%;
+}
+
+.Account-side_sect li a i{
+    margin-right: 10px;
+}
+
+.Account-side_sect li {
+    border-bottom:1px solid #eee;
+}
+
+.Account-side_sect li a{
+    padding: 14px 15px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    color: #969696;
+}
+
+.Account-sublist a {
+    padding: 5px !important;
+    color: black !important;
+    font-size: 13px !important;
+    text-transform: none !important;
+}

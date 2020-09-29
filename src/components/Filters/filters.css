@@ -1,0 +1,32 @@
+.filter_Sect{
+    background-color: #fff;
+}
+
+.filter_Sect ul li{
+    background-color: #fff;
+    padding:10px;
+    font-weight: 500;
+    font-size: 13px;
+    border-top: 1px solid #eee;
+}
+
+.filter_Sect ul li:first-child{
+    padding: 10px 10px 0px 10px!important;
+    font-size: 18px;
+}
+
+.filter_Sect ul div{
+    margin-bottom: 10px;
+}
+
+
+.filter_title{
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    font-weight: 500
+}
+
+.filter_divs {
+    padding:7px 10px;
+}

@@ -1,0 +1,29 @@
+
+
+.headerSpacing  { 
+    padding : 0 10% !important
+}
+
+.txtbox  {
+    border-radius: 0px;
+    width: 536px !important;
+}
+
+.footerBtmlistitem  {
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+    margin-right:50px
+}
+
+.font-weight-500{
+    font-weight: 500;
+}
+
+/* .allmenubar .dropdown-item:hover{
+background-color: none !important;
+} */
+
+.allmenubar{
+    background-color: #fff;
+}
