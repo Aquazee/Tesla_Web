@@ -26,7 +26,7 @@
 	border-color: #FFFFFF;
 }
 
-form {
+.cform {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -37,7 +37,7 @@ form {
 	text-align: center;
 }
 
-input {
+.cinput {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;

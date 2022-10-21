@@ -36,14 +36,14 @@ const AuthForm = () => {
             <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
           </div>
           <h5 style={{color: '#cedde9'}}>OR</h5>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input className='cinput' type="text" placeholder="Name" />
+          <input className='cinput' type="email" placeholder="Email" />
+          <input className='cinput' type="password" placeholder="Password" />
           <button className='mt-3 cbutton'>Sign Up</button>
         </form>
       </div>
       <div className="form-container sign-in-container">
-        <form action="#">
+        <form className='cform' action="#">
           <h1>Sign in</h1>
           <div className="social-container">
             <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
@@ -52,8 +52,8 @@ const AuthForm = () => {
           </div>
           <h5 style={{color: '#cedde9'}}>OR</h5>
           <div className='row'>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input className='cinput' type="email" placeholder="Email" />
+            <input className='cinput' type="password" placeholder="Password" />
             <a href="/forgot-password">Forgot password?</a>
           </div>
           <button className='mt-4 cbutton'>Sign In</button>
