@@ -1,27 +1,22 @@
-import React, { Component, PropTypes } from 'react';
-import { Router } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { UserLanding } from './user-screens';
+import { AdminLanding } from './admin-screens';
+import { useAuth } from './contexts';
 
-import { routes } from './routes';
+const App = ({ history, routes }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [IsAdminPortal, setIsAdminPortal] = useState(false);
+  const { user, admin } = useAuth();
 
-// Currently, only synchronous routes are hot reloaded, and
-// you will see a warning from <Router> on every reload.
-// You can ignore this warning. For details, see:
-// https://github.com/reactjs/react-router/issues/2182
+  useEffect(() => {
+    if (user) setIsLoggedIn(true);
+  }, [user]);
 
-const propTypes = {
-  history: PropTypes.object.isRequired
-};
+  useEffect(() => {
+    if (admin) setIsAdminPortal(true);
+  }, [admin]);
 
-// We can't use pure function here because in that case hot reloading won't work
-// eslint-disable-next-line react/prefer-stateless-function
-class App extends Component {
-  render() {
-    return (
-          <Router history={this.props.history} routes={routes} />
-    );
-  }
+  return IsAdminPortal ? <AdminLanding /> : <UserLanding />;
 }
-
-App.propTypes = propTypes;
 
 export default App;

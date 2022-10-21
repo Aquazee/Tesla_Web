@@ -1,44 +1,54 @@
-import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import React from 'react';
+import 'popper.js/dist/popper.js'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import $ from 'jquery';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import * as bootstrap from 'bootstrap';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
-import configureStore from './store/configureStore';
+import App from "./App";
 
-import '../node_modules/bootstrap/less/bootstrap.less';
+import {
+  AuthProvider,
+  UserDataProvider,
+  NotificationDataProvider,
+  AppDataProvider
+} from './contexts';
+import reportWebVitals from './reportWebVitals';
 
-require('babel-polyfill');
+// window.onload = function (e) {
+//   var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+//   var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+//     return new bootstrap.Dropdown(dropdownToggleEl)
+//   })
+//   var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+//   var collapseList = collapseElementList.map(function (collapseEl) {
+//     return new bootstrap.Collapse(collapseEl)
+//   })
 
-const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
+//   var myCarousel = document.querySelector('#carouselExampleControls')
+//   var carousel = new bootstrap.Carousel(myCarousel)
+// }
 
-const rootEl = document.getElementById('app');
 ReactDOM.render(
-  <Provider store={store}>
-    <AppContainer>
-      <App history={history} />
-    </AppContainer>
-  </Provider>,
-  rootEl
+
+  <AuthProvider>
+    <UserDataProvider>
+      <AppDataProvider>
+        <NotificationDataProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </NotificationDataProvider>
+      </AppDataProvider>
+    </UserDataProvider>
+  </AuthProvider>,
+  document.getElementById('root')
 );
 
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    // If you use Webpack 2 in ES modules mode, you can
-    // use <App /> here rather than require() a <NextApp />.
-    // eslint-disable-next-line global-require
-    const NextApp = require('./App').default;
-
-    ReactDOM.render(
-      <Provider store={store}>
-        <AppContainer>
-          <NextApp history={history} />
-        </AppContainer>
-      </Provider>,
-      rootEl
-    );
-  });
-}
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
