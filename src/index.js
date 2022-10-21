@@ -18,19 +18,21 @@ import {
 } from './contexts';
 import reportWebVitals from './reportWebVitals';
 
-// window.onload = function (e) {
-//   var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-//   var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-//     return new bootstrap.Dropdown(dropdownToggleEl)
-//   })
-//   var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
-//   var collapseList = collapseElementList.map(function (collapseEl) {
-//     return new bootstrap.Collapse(collapseEl)
-//   })
+window.onload = function (e) {
+  var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+  var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+    return new bootstrap.Dropdown(dropdownToggleEl)
+  })
+  var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+  var collapseList = collapseElementList.map(function (collapseEl) {
+    return new bootstrap.Collapse(collapseEl)
+  })
 
-//   var myCarousel = document.querySelector('#carouselExampleControls')
-//   var carousel = new bootstrap.Carousel(myCarousel)
-// }
+  var myCarousel = [].slice.call(document.querySelectorAll('.carousel'))
+  var collapseList = myCarousel.map(function (collapseEl) {
+    return new bootstrap.Carousel(collapseEl)
+  })
+}
 
 ReactDOM.render(
 

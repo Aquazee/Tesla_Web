@@ -118,11 +118,11 @@ const MORELIST = [
   },
 ]
 
-const MoreListItems = ({ name, url, icon }) => {
+const MoreListItems = ({ name, path, icon }) => {
   return (
     <>
       <div className="dropdown-divider" />
-      <a className="dropdown-item" href={url}>
+      <a className="dropdown-item" href={path}>
         <i className={`${icon} mr-3`} />
         {name}
       </a>

@@ -10,11 +10,13 @@ import {
   Col,
   Button,
   FormGroup,
+  Label,
   Input
 } from 'reactstrap';
 import NotificationAlert from 'react-notification-alert';
 import { Notification, Regex } from '../utils';
 import { useAuth } from '../contexts';
+import AuthForm from '../domain/AuthForm/AuthForm';
 
 const { emailReg, nameReg, mobileReg } = Regex;
 const initialState = {
@@ -50,7 +52,7 @@ const Login = () => {
   const [open, setOpen] = useState(false);
   const { login } = useAuth();
 
-  const [formLabel, setFormLabel] = useState('Create Login');
+  const [formLabel, setFormLabel] = useState('Login');
   const notificationAlertRef = React.useRef(null);
 
   const onPress = (action, id) => {
@@ -84,7 +86,7 @@ const Login = () => {
     <div className="content">
       <NotificationAlert ref={notificationAlertRef} />
       <Row>
-        <Col md="4" offset={4} className="offset-md-4">
+        <Col className="offset-3 col-6">
           <LoginForm
             formLabel={formLabel}
             notificationAlertRef={notificationAlertRef}
@@ -103,48 +105,7 @@ const LoginForm = ({ formLabel = 'Login Form', notificationAlertRef, onSubmitLog
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <Row>
-          <Col className="pr-md-1" md="10">
-            <CardTitle tag="h4">{formLabel}</CardTitle>
-          </Col>
-        </Row>
-      </CardHeader>
-      <CardBody>
-        <Row>
-          <Col md="12">
-            <form id="login-form">
-              <FormGroup>
-                <label>Email / Mobile*</label>
-                <Input
-                  placeholder="Email / Mobile"
-                  type="text"
-                  name="email"
-                  onChange={({ nativeEvent }) => {
-                    // setEmail(nativeEvent.target.value);
-                  }}
-                />
-              </FormGroup>
-              <FormGroup>
-                <label />
-                <Input
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  onChange={({ nativeEvent }) => {
-                    // setPassword(nativeEvent.target.value);
-                  }}
-                />
-              </FormGroup>
-            </form>
-            <Button className="mb-3 float-right" onClick={onSubmitLoginForm}>
-              Submit
-            </Button>
-          </Col>
-        </Row>
-      </CardBody>
-    </Card>
+    <AuthForm />
   );
 }
 
