@@ -37,6 +37,7 @@
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
     "moment": "^2.29.4",
+    "morgan": "1.10.0",
     "node-sass": "^7.0.3",
     "node-sass-package-importer": "^3.0.4",
     "perfect-scrollbar": "1.5.0",
