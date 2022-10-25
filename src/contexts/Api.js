@@ -25,15 +25,15 @@ export const useApi = (props) => {
       login: (body) => api.post('/auth/login', body),
       logout: (body) => api.post('/auth/logout', body),
       registerUser: (body) => api.post('/auth/register', body),
-      getProducts: (body) => api.post('/api/products/', body),
-      getProduct: (body) => api.get('/api/products/:productId', body),
+      getProducts: (body) => api.get('/api/products/', body),
+      getProduct: (body) => api.get('/api/products/:productId'),
       postGuestCart: (body) => api.post('/api/products/:productId', body),
       postGuestAddress: (body) => api.post('/api/carts/:cartId/address', body),
       postUserAddress: (body) => api.post('/api/carts/:cartId/address', body),
-      getOrder: (body) => api.post('/api/orders/:orderId', body),
-      getOrders: (body) => api.post('/api/orders/:orderId', body),
-      getWishlist: (body) => api.post('/api/orders/:orderId', body),
-      getCart: (body) => api.post('/api/orders/:orderId', body),
+      getOrder: (body) => api.get('/api/orders/:orderId', body),
+      getOrders: (body) => api.get('/api/orders/:orderId', body),
+      getWishlist: (body) => api.get('/api/user/:wishlistId', body),
+      getCart: (body) => api.get('/api/cart/:cartId', body),
     };
   };
 
