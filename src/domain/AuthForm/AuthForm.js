@@ -1,16 +1,38 @@
+import { Input } from '../../components';
 import React, { useEffect } from 'react';
+
+import { AppFunctions, Constants } from '../../utils'
+import SocialLoginList from './SocialLoginList';
 import './style.css'
 
-const AuthForm = () => {
+
+
+const AuthForm = ({ onSubmitRegisterForm, onSubmitLoginForm }) => {
+  let signUpButton, signInButton, container;
   const removeListener = event => {
     console.log('Removing listener');
   };
 
   useEffect(() => {
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('authContainer');
+    pageLoad();
+    return cleanUp();
+  })
 
+  const pageLoad = () => {
+    toggleForms();
+  }
+
+  const cleanUp = () => {
+    return [
+      signUpButton.removeEventListener('click', removeListener),
+      signInButton.removeEventListener('click', removeListener)
+    ]
+  }
+
+  const toggleForms = () => {
+    signUpButton = document.getElementById('signUp');
+    signInButton = document.getElementById('signIn');
+    container = document.getElementById('authContainer');
     signUpButton.addEventListener('click', () => {
       container.classList.add("right-panel-active");
     });
@@ -18,45 +40,50 @@ const AuthForm = () => {
     signInButton.addEventListener('click', () => {
       container.classList.remove("right-panel-active");
     });
-    return [
-      signUpButton.removeEventListener('click', removeListener),
-      signInButton.removeEventListener('click', removeListener)
-    ]
-  })
+  }
+
+  const register = (event) => {
+    const registerFormData = AppFunctions.getFormValues(event)
+    onSubmitRegisterForm(registerFormData);
+  }
+
+  const login = (event) => {
+    const loginFormData = AppFunctions.getFormValues(event)
+    onSubmitLoginForm(loginFormData);
+  }
 
   return (
-
     <div className="authContainer" id="authContainer">
       <div className="form-container sign-up-container">
-        <form action="#">
+        <form name='register' className='cform' action="#" onSubmit={register}>
           <h2>Create Account</h2>
-          <div className="social-container">
-            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+          <SocialLoginList />
+          <h5 style={{ color: '#cedde9' }}>OR</h5>
+          <div className='row'>
+            <div className='col-6'>
+              <Input name="first_name" type="text" placeholder="First Name" />
+            </div>
+            <div className='col-6'>
+              <Input name="last_name" type="text" placeholder="Last Name" />
+            </div>
           </div>
-          <h5 style={{color: '#cedde9'}}>OR</h5>
-          <input className='cinput' type="text" placeholder="Name" />
-          <input className='cinput' type="email" placeholder="Email" />
-          <input className='cinput' type="password" placeholder="Password" />
-          <button className='mt-3 cbutton'>Sign Up</button>
+          <Input name="email" type="email" placeholder="Email" />
+          <Input name="password" type="password" placeholder="Password" />
+          <Input name="cpassword" type="password" placeholder="Confirm Password" />
+          <button className='mt-3 cbutton' type='submit'>Sign Up</button>
         </form>
       </div>
       <div className="form-container sign-in-container">
-        <form className='cform' action="#">
+        <form name='login' className='cform' action="#" onSubmit={login}>
           <h1>Sign in</h1>
-          <div className="social-container">
-            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-          </div>
-          <h5 style={{color: '#cedde9'}}>OR</h5>
+          <SocialLoginList />
+          <h5 style={{ color: '#cedde9' }}>OR</h5>
           <div className='row'>
-            <input className='cinput' type="email" placeholder="Email" />
-            <input className='cinput' type="password" placeholder="Password" />
+            <input className='cinput' name="email" type="email" placeholder="Email" />
+            <input className='cinput' name="password" type="password" placeholder="Password" />
             <a href="/forgot-password">Forgot password?</a>
           </div>
-          <button className='mt-4 cbutton'>Sign In</button>
+          <button className='mt-3 cbutton' type='submit'>Sign In</button>
         </form>
       </div>
       <div className="overlay-container">
