@@ -192,7 +192,28 @@ const Constants = {
     {
       name: 'Stylish & Portable Thin and Light Laptop',
     },
-  ]
+  ],
+  SOCIALLOGINS: [
+    {
+      name: 'Facebook',
+      icon: 'fab fa-facebook-f',
+      path: '/auth/facebook',
+      is_active: true
+    },
+    {
+      name: 'Google',
+      icon: 'fab fa-google-plus-g',
+      path: '/auth/facebook',
+      is_active: true
+    },
+    {
+      name: 'LinkedIn',
+      icon: 'fab fa-linkedin-in',
+      path: '/auth/facebook',
+      is_active: false
+    },
+  ],
+  BACKEND_DOMAIN: 'http://localhost:3000'
 };
 
 export default Constants;

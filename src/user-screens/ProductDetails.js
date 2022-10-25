@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import BreadCrumb from '../domain/BreadCrumb/BreadCrumb';
 import Showcase from '../domain/Product/Showcase/Showcase';
@@ -6,6 +6,7 @@ import '../domain/Product/ProductDetails/style.css';
 import ProductDetailsComponents from '../domain/Product/ProductDetails/ProductDetailsComponents';
 import DeliveryModal from '../domain/Product/ProductDetails/DeliveryModal';
 import ProductDeliveryInfoModal from '../domain/Product/ProductDetails/ProductDeliveryInfoModal';
+import { AppFunctions } from '../utils';
 
 const {
   ComboOffers,
@@ -21,7 +22,14 @@ const {
   Specifications
 } = ProductDetailsComponents;
 
-function ProductDetails() {
+function ProductDetails({route}) {
+  useEffect(() =>{
+    pageLoad();
+  })
+
+  const pageLoad = () => {
+    AppFunctions.setTitle(route.name)
+  }
   return (
     <div className="super_container offset-1 col-10">
       {/* <header className="header" style={{ display: 'none' }}>

@@ -9,7 +9,7 @@ import '../domain/Search/style.css';
  function SearchScreen () {
   return (
     <div className="col-12">
-      <div className="" style={{ background: '#e0e0e0', padding: 10 }}>
+      <div className="" style={{ padding: 10 }}>
         <div className="row">
           <div className="col-3">
             <Filters />
