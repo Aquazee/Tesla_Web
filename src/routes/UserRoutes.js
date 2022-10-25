@@ -1,40 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Router, Route, Routes, Switch, Link, Redirect } from 'react-router-dom';
 
-import { Loader, Login, UserProfile } from '../common-screens';
-import { Dashboard, UserLanding } from '../user-screens';
+import Loader from '../common-screens/Loader';
+import Account from '../common-screens/Account';
+import Dashboard from '../user-screens/Dashboard';
+import Login from "../user-screens/Login";
 import ProductDetails from "../user-screens/ProductDetails";
 import SearchScreen from "../user-screens/SearchScreen";
+import Checkout from "../user-screens/Checkout";
 import { useAuth } from '../contexts';
+import NotFound from '../domain/NotFound/NotFound';
+import OrderTracking from '../domain/OrderTracking/OrderTracking';
 
 const guestRoutes = [
   {
     path: '/product',
     name: 'Product',
     icon: 'icon-chart-pie-36',
-    component: <ProductDetails />,
+    component: ProductDetails,
     layout: '/product'
   },
   {
     path: '/search',
     name: 'Search',
     icon: 'icon-chart-pie-36',
-    component: <SearchScreen />,
+    component: SearchScreen,
     layout: '/search'
   },
   {
     path: '/login',
     name: 'Login',
     icon: 'icon-atom',
-    component: <Login />,
+    component: Login,
     layout: '/login'
   },
   {
     path: '/',
     name: 'Home',
     icon: 'icon-atom',
-    component: <Dashboard />,
+    component: Dashboard,
     layout: '/'
+  },
+  {
+    path: '/checkout',
+    name: 'Checkout',
+    icon: 'icon-atom',
+    component: Checkout,
+    layout: '/checkout'
+  },
+  {
+    path: '/*',
+    name: 'Not Found',
+    icon: 'icon-atom',
+    component: NotFound,
+    layout: '/*'
+  },
+  {
+    path: '/order-track',
+    name: 'Order Tracking',
+    icon: 'icon-atom',
+    component: OrderTracking,
+    layout: '/ordertrack'
   }
 ];
 
@@ -43,12 +69,12 @@ const LoggedInRoutes = [
     path: '/account',
     name: 'Account',
     icon: 'icon-atom',
-    component: <UserProfile />,
+    component: Account,
     layout: '/account'
   }
 ];
 
-const excludeGuestRoute = ['login'];
+const excludeGuestRoute = ['account'];
 
 const UserRoutes = ({ session }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -64,25 +90,33 @@ const UserRoutes = ({ session }) => {
     guestRoutes.filter((route) => excludeGuestRoute.indexOf(route.name) === -1);
 
   return (
-    <>
-      {!isLoggedIn ? (
-        <Switch>
-          {guestRoutes.map((route, index) => (
-            <Route key={`${index}_guestUser`} path={route.path} >
-              {route.component}
-            </Route>
-          ))}
-        </Switch>
-      ) : (
-        <Switch>
-          {getLoggedInRoutes().map((route, index) => (
-            <Route key={`${index}_userloggedIn`} ath={route.path}  >
-            {route.component}
+    <Switch>
+      {
+        (!isLoggedIn ? guestRoutes : getLoggedInRoutes()).map((route, index) => (
+          <Route exact={route.path === '/'} key={`${index}_guestUser`} path={route.path} >
+            <route.component route={route} />
           </Route>
-          ))}
-        </Switch>
-      )}
-    </>
+        ))
+      }
+      {/* <Route exact path='/' >
+        <Dashboard route={{ name: 'Account' }} />
+      </Route>
+      <Route path='/product' >
+        <ProductDetails route={{ name: 'Account' }} />
+      </Route>
+      <Route path='/checkout' >
+        <Checkout route={{ name: 'Checkout' }} />
+      </Route>
+      <Route path='/account' >
+        <Account route={{ name: 'Account' }} />
+      </Route>
+      <Route path='/account' >
+        <Account route={{ name: 'Account' }} />
+      </Route>
+      <Route path='/account' >
+        <Account route={{ name: 'Account' }} />
+      </Route> */}
+    </Switch>
   );
 }
 
