@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import './style.css';
 import menu from './menu';
 import { getWindowDimensions, UpperCaseArray } from '../../utils/Helper';
-import { Dropdown } from '../../components';
+import { Dropdown, Input } from '../../components';
+import { useAuth } from '../../contexts';
 // const MENU_DATA = require('../../dummy/menu');
 
 
@@ -32,7 +33,7 @@ const MenuItem = () => {
         </a>
         <div
           className="dropdown-menu rounded-0 border-0"
-          
+
           aria-labelledby={MENU_DATA[0][j].title}
           style={{ width: myWidth }}
         >
@@ -130,11 +131,36 @@ const MoreListItems = ({ name, path, icon }) => {
   )
 }
 
+
 const Header = () => {
+  const { isLoggedIn, setLoggedIn } = useAuth();
+
+  const LoggedInRoutes = () => {
+    if (isLoggedIn) {
+      return {
+        name: 'Account',
+        path: '/account'
+      }
+    } else {
+
+      return {
+        name: 'Login',
+        path: '/login'
+      }
+    }
+  }
+
+  useEffect(() => {
+    const tokenExtras = window.location.href.split('token=')[1];
+    const token = tokenExtras ? tokenExtras.split(';')[0] : undefined;
+    if (token && !isLoggedIn) {
+      setLoggedIn(token);
+    }
+  })
   return (
     <div className='row'>
-      <nav className="mb-0 navbar navbar-expand-lg navbar-light bg-light container-fluid pr-15 pl-15 headerSpacing mt-3 mb-3">
-        <a className="navbar-brand" href="#">
+      <nav className="mb-0 navbar navbar-expand-lg navbar-light container-fluid pr-15 pl-15 headerSpacing headerNavb text-white">
+        <a className="navbar-brand text-white" href="/">
           Tesla
         </a>
         <button
@@ -148,37 +174,37 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-
-        <form className="col-9 d-flex" role="search">
-          <input
-            className="form-control me-sm-2 txtbox rounded-0"
-            type="search"
-            placeholder="Search for products, brands & more"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-light"
-            type="submit"
-            onClick={() => {
-              window.location.href = '/search';
-            }}
-          >
-            <i className="fa fa-search" />
-          </button>
-        </form>
-
+        <div className='col-9'>
+          <form className=" d-flex g-search col-8" role="search">
+            <Input
+              className=""
+              type="search"
+              placeholder="Search for products, brands & more"
+              aria-label="Search"
+            />
+            <button
+              className="btn btn-transparent"
+              type="submit"
+              onClick={() => {
+                window.location.href = '/search';
+              }}
+            >
+              <i className="fa fa-search text-white" />
+            </button>
+          </form>
+        </div>
         <div className="col-3 collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto float-end">
             <li className="nav-item active">
-              <a className="nav-link" href="/account">
-                Account
+              <a className="nav-link text-white login-link" href={LoggedInRoutes().path}>
+                {LoggedInRoutes().name}
                 <span className="sr-only">(current)</span>
               </a>
             </li>
             {/* <Dropdown label={'more'} onSelect={()=>{}} options={['Notification Preferences', 'Sell on Triangle', '24/7 Customer Care', 'Advertise', 'Download App']}/> */}
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown header-more ml-2">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle text-white"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -194,8 +220,8 @@ const Header = () => {
                 }
               </div>
             </li>
-            <li className="nav-item ml-4">
-              <a className="nav-link disabled" href="#">
+            <li className="nav-item ml-2">
+              <a className="nav-link text-white cart-icon" href="/checkout">
                 <i className="fa fa-shopping-cart mr-2" aria-hidden="true" />
                 Cart
               </a>
