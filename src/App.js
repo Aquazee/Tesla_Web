@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { UserLanding } from './user-screens';
-import { AdminLanding } from './admin-screens';
+import UserLanding from './user-screens/UserLanding';
+import ErrorBoundary from './domain/ErrorBoundary/ErrorBoundary';
+import AdminLanding from './admin-screens/AdminLanding';
 import { useAuth } from './contexts';
 
 const App = ({ history, routes }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [IsAdminPortal, setIsAdminPortal] = useState(false);
-  const { user, admin } = useAuth();
+  const { user, admin, isLoggedIn, setLoggedIn, userPortal, IsAdminPortal, setAdminPortal } = useAuth();
 
   useEffect(() => {
-    if (user) setIsLoggedIn(true);
+    if (user && user.role.indexOf('admin') !== -1 && userPortal === 'admin') setAdminPortal(true);
   }, [user]);
 
-  useEffect(() => {
-    if (admin) setIsAdminPortal(true);
-  }, [admin]);
-
-  return IsAdminPortal ? <AdminLanding /> : <UserLanding />;
+  return (
+    <ErrorBoundary>
+      {IsAdminPortal ? <AdminLanding /> : <UserLanding />}
+    </ErrorBoundary>
+  );
 }
 
 export default App;

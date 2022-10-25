@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { AppFunctions } from '../../utils';
 import './NotFound.css';
 
-const NotFound = () => {
+function NotFound({route}){
+  useEffect(() =>{
+    pageLoad();
+  })
+
+  const pageLoad = () => {
+    AppFunctions.setTitle(route.name)
+  }
   return (
     <div className="container">
       <div className="row">
@@ -13,11 +21,11 @@ const NotFound = () => {
               Sorry, an error has occured, Requested page not found!
             </div>
             <div className="error-actions">
-              <a href="http://www.jquery2dotnet.com" className="btn btn-primary btn-lg">
+              <a href="/" className="btn btn-primary btn-lg">
                 <span className="glyphicon glyphicon-home" />
                 Take Me Home
               </a>
-              <a href="http://www.jquery2dotnet.com" className="btn btn-default btn-lg">
+              <a href="/support" className="btn btn-default btn-lg">
                 <span className="glyphicon glyphicon-envelope" />
                 Contact Support
               </a>

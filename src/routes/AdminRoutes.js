@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { useAuth } from '../contexts';
-import { Loader, Login } from '../common-screens';
+import Loader from '../common-screens/Loader';
 
 const routes = [
   // {
@@ -39,7 +39,14 @@ const routes = [
   //   icon: 'icon-atom',
   //   component: Notifications,
   //   layout: '/notifications'
-  // }
+  // },
+  {
+    path: '/notification',
+    name: 'Notification Management',
+    icon: 'icon-atom',
+    component: Loader,
+    layout: '/notifications'
+  }
 ];
 
 const RoutesList = () =>
@@ -61,8 +68,8 @@ const AdminRoutes = () => {
     <BrowserRouter>
       {!isLoggedIn ? (
         <Switch>
-          <Route from="/" to="/login">
-            <Login />
+          <Route from="/" to="/loader">
+            <Loader />
           </Route>
         </Switch>
       ) : (
