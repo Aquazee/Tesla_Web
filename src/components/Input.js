@@ -6,20 +6,14 @@ function Input({ register, ...props }) {
       id={props.id}
       type={props.type || 'text'}
       placeholder={props.placeholder}
-      className={`form-control rounded-lg ${props.className}`}
+      className={`cinput ${props.className}`}
       onChange={props.onChange}
       required={props.required}
       autoComplete="off"
       value={props.value}
       min={props.min}
       data-id={props.dataId}
-      data-parentId={props.parentId}
-      data-parentIndex={props.parentIndex}
-      data-nestedId={props.nestedId}
-      data-nestedIndex={props.nestedIndex}
-      data-grandId={props.grandId}
       pattern={props.pattern}
-      step={props.step}
       maxLength={props.maxLength}
       style={{ ...props.style, ...styles }}
     />

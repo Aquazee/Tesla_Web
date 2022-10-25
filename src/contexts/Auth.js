@@ -12,7 +12,10 @@ const initialState = {
   isLoading: true,
   isSuccess: false,
   isError: false,
-  user: null
+  user: null,
+  isLoggedIn: false,
+  IsAdminPortal: false,
+  userPortal: 'user',
 };
 
 export const AuthProvider = ({ children }) => {
@@ -24,7 +27,8 @@ export const AuthProvider = ({ children }) => {
       const response = await api.login(body);
       console.log(response);
       if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(response.data));
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('user', JSON.stringify(response.user));
         dispatch({ type: 'setUser', payload: response });
       }
       return response;
@@ -32,6 +36,30 @@ export const AuthProvider = ({ children }) => {
       onOAuthFailure(err);
     }
   };
+
+  const register = async (body) => {
+    try {
+      const response = await api.registerUser(body);
+      console.log(response);
+      if (response.ok) {
+        localStorage.setItem('user', JSON.stringify(response.data));
+        // dispatch({ type: 'setUser', payload: response });
+      }
+      return response;
+    } catch (err) {
+      onOAuthFailure(err);
+    }
+  };
+
+  const setLoggedIn = (token) => {
+    localStorage.setItem('token', JSON.stringify(token));
+    dispatch({ type: 'setIsLoggedIn', payload: true });
+  }
+
+  const setAdminPortal = (token) => {
+    localStorage.setItem('token', JSON.stringify(token));
+    dispatch({ type: 'setIsAdminPortal', payload: true });
+  }
 
   const logout = async () => {
     try {
@@ -75,7 +103,10 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         login,
+        register,
         logout,
+        setLoggedIn,
+        setAdminPortal,
         ...state
       }}
     >
@@ -97,6 +128,11 @@ const reducer = (state, { type, payload }) => {
         isError: true,
         isLoading: false,
         message: payload
+      };
+    case 'setIsLoggedIn':
+      return {
+        ...state,
+        isLoggedIn: payload
       };
     case 'setUser':
       return {

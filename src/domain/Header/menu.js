@@ -2670,21 +2670,21 @@ const menu = {
           }
         ]
       },
-      Grocery: {
-        title: 'Grocery',
-        class: 'link-Grocery',
-        url: '/grocery-supermart-store?marketplace=GROCERY'
-      },
-      Flights: {
-        title: 'Flights',
-        class: 'link-flight',
-        url: '/travel/flights'
-      },
-      'offer-zone': {
-        title: 'OfferZone',
-        class: 'link-offer-zone',
-        url: '/offers-store'
-      }
+      // Grocery: {
+      //   title: 'Grocery',
+      //   class: 'link-Grocery',
+      //   url: '/grocery-supermart-store?marketplace=GROCERY'
+      // },
+      // Flights: {
+      //   title: 'Flights',
+      //   class: 'link-flight',
+      //   url: '/travel/flights'
+      // },
+      // 'offer-zone': {
+      //   title: 'OfferZone',
+      //   class: 'link-offer-zone',
+      //   url: '/offers-store'
+      // }
     }
   ]
 };
