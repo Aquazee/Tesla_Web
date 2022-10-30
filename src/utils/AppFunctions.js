@@ -38,7 +38,7 @@ AppFunctions.getFormValues = (e) => {
 
 AppFunctions.getMessage = (resp) => {
   if (!resp.ok) {
-    if (Message.Register[resp.data.error]) {
+    if (resp.data && Message.Register[resp.data.error]) {
       return Message.Register[resp.data.error];
     } else {
       return Message.ErrorOccurred;

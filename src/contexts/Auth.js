@@ -14,22 +14,38 @@ const initialState = {
   isError: false,
   user: null,
   isLoggedIn: false,
+  isAdmin: false,
   IsAdminPortal: false,
   userPortal: 'user',
+  token: null
 };
 
 export const AuthProvider = ({ children }) => {
   const api = useApi();
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const setAppData = () => {
+    const user = localStorage.getItem('user')
+    const token = localStorage.getItem('token')
+    const payload = {}
+    if (user) {
+      payload.user = JSON.parse(user)
+    }
+    if(token) {
+      payload.token = token
+    }
+
+    dispatch({ type: 'setAppData', payload });
+  }
+
   const login = async (body) => {
     try {
       const response = await api.login(body);
       console.log(response);
       if (response.ok) {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('user', JSON.stringify(response.user));
-        dispatch({ type: 'setUser', payload: response });
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        dispatch({ type: 'setLoginData', payload: response.data });
       }
       return response;
     } catch (err) {
@@ -37,13 +53,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const register = async (body) => {
+  const signup = async (body) => {
     try {
       const response = await api.registerUser(body);
       console.log(response);
-      if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-        // dispatch({ type: 'setUser', payload: response });
+      if (!response.ok) {
       }
       return response;
     } catch (err) {
@@ -96,16 +110,17 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    checkAuth();
+    setAppData();
   }, []);
 
   return (
     <AuthContext.Provider
       value={{
         login,
-        register,
+        signup,
         logout,
         setLoggedIn,
+        setAppData,
         setAdminPortal,
         ...state
       }}
@@ -138,6 +153,20 @@ const reducer = (state, { type, payload }) => {
       return {
         ...state,
         user: payload,
+        isLoading: false
+      };
+    case 'setLoginData':
+      return {
+        ...state,
+        ...payload,
+        isLoggedIn: true,
+        isLoading: false
+      };
+    case 'setAppData':
+      return {
+        ...state,
+        ...payload,
+        isLoggedIn: payload.token ? true : false,
         isLoading: false
       };
     case 'reset':
