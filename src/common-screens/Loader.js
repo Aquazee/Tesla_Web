@@ -6,18 +6,13 @@ import { useAuth } from '../contexts';
 const Loader  = () => {
   const history = useHistory();
 
-  const { user } = useAuth();
+  const { user, setAppData } = useAuth();
 
   const checkAuth = () => {
-    console.log(user);
     if (user) {
-      history.push('/admin');
+      window.location.href = '/'
     }
   };
-
-  useEffect(() => {
-    checkAuth();
-  }, [user]);
 
   return (
     <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ height: 400 }}>

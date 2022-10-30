@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { FieldLabel, ErrorText } from '../components';
+import { FieldLabel, ErrorText, Input } from '../components';
 
 const CalendarBox = React.forwardRef((props, ref) => (
   <div className={`mt-3 mb-3 ${props.className}`}>
     <FieldLabel id={props.id} label={props.label} isRequired={props.isRequired} />
-    <input
+    <Input
       ref={ref}
       id={props.id}
       min={props.min}
