@@ -213,7 +213,39 @@ const Constants = {
       is_active: false
     },
   ],
-  BACKEND_DOMAIN: 'http://localhost:3000'
+  BACKEND_DOMAIN: 'http://localhost:3000',
+  FormValidation: {
+    LoginUser: 'loginUser'
+  },
+  MORELIST: [
+    {
+      name: 'Sell on Tesla',
+      path: '/sell',
+      icon: 'fa fa-line-chart'
+    },
+    {
+      name: '24/7 Customer Care',
+      path: '/contact',
+      icon: 'fa fa-question'
+    },
+    {
+      name: 'Advertise',
+      path: '/advertise',
+      icon: 'fa fa-television'
+    },
+    {
+      name: 'Download App',
+      path: '/download',
+      icon: 'fa fa-download'
+    },
+  ],
+  ACCOUNTDROPDOWNLIST: [
+    {name: 'My Profile', path: '/account', icon: 'fa-solid fa-user'},
+    {name: 'Orders', path: '/orders' , icon: 'fa-brands fa-first-order-alt'},
+    {name: 'Wishlist', path: '/wishlist', icon: 'fa-solid fa-heart'},
+    {name: 'Notifications', path: '/notifications', icon: 'fa-solid fa-bell'},
+    {name: 'Logout', path: '/logout', icon: 'fa-solid fa-arrow-right-from-bracket'},
+  ]
 };
 
 export default Constants;

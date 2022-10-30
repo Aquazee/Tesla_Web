@@ -6,7 +6,7 @@ export const useApp = () => useContext(AppContext);
 
 const appActions = {
   MAKE_REQUEST: 'MAKE_REQUEST',
-  SET_APP_DATA: 'SET_CAMPAIGN_DATA',
+  SET_APP_DATA: 'SET_APP_DATA',
   ERROR: 'ERROR'
 };
 
