@@ -1,135 +1,110 @@
 import React from 'react';
+import ManageAddresses from './ManageAddresses';
+import PanCardInformation from './PanCardInformation';
+import PersonalInformation from './PersonalInformation';
 import './style.css';
+
+const ACCOUNT = [
+  {
+    'name': 'Account Settings',
+    'sections': [
+      {
+        name: 'Profile Information',
+        is_active: true
+      },
+      {
+        'name': 'Manage Addresses',
+        is_active: true
+      },
+      {
+        'name': 'Pan Card Information',
+        'is_active': true
+      },
+    ]
+  },
+  {
+    'name': 'Payments',
+    'sections': [
+      {
+        'name': 'Gift Cards',
+        is_active: false
+      },
+      {
+        'name': 'Saved UPI',
+        is_active: false
+      },
+      {
+        'name': 'Saved Cards',
+        is_active: false
+      },
+    ]
+  },
+  {
+    'name': 'My Stuff',
+    'sections': [
+      {
+        'name': 'Coupons',
+        is_active: false
+      },
+      {
+        'name': 'Reviews and Ratings',
+        is_active: false
+      },
+      {
+        'name': 'Notifications',
+        is_active: false
+      },
+      {
+        'name': 'Wishlist',
+        is_active: false
+      },
+    ]
+  },
+]
 
 function Account() {
   return (
-    <div className="col-12">
-      <div className="" style={{ background: '#e0e0e0', padding: 10 }}>
-        <div className="row">
-          <div className="col-3 offset-1">
-            <div id="" className="bg-white p-2 pl-4 card">
-              <ul className="mb-0">
-                <li className="filter_title">
-                  <div className="row">
-                    <div className="col-2">
-                      <div
-                        className="rounded-circle w-auto text-center border border-secondary"
-                        style={{ padding: 15, marginBottom: 0, width: 58 }}
-                      >
-                        <i className="fa fa-user" height />
-                      </div>
-                    </div>
-                    <div className="col-9">
-                      {' '}
-                      Hello,
-                      <br />
-                      Aqua freax
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div id="" className="nav nav-tabs mt-4 card">
-              {/* <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a className="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                            <a className="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                            <a className="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                            <a className="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                        </div> */}
-              <ul className="Account-side_sect mb-0">
-                <li className="text-secondary text-uppercase">
-                  <a className="nav-link" href="/myorders">
-                    <i className="fa fa-suitcase" /> My Orders
-                  </a>
-                </li>
-                <li className="text-secondary text-uppercase">
-                  <a
-                    className="nav-link"
-                    id="one-tab"
-                    data-toggle="tab"
-                    href="#one"
-                    role="tab"
-                    aria-controls="One"
-                    aria-selected="true"
+    <div className="col-12 mt-3 mb-3" >
+      <div className="row">
+        <div className="col-3 offset-1">
+          <div id="" className="bg-white p-2 pl-4 card">
+            <ul className="mb-0">
+              <li className="filter_title">
+                <div className="row">
+                  <div
+                    className="rounded-circle w-auto text-center border border-secondary mr-3 ml-2"
+                    style={{ padding: 15, marginBottom: 0, minWidth: 58 }}
                   >
-                    <i className="fa fa-user" height /> Account Settings
-                  </a>
-                  <div className="Account-sublist" style={{ marginLeft: 35, paddingBottom: 10 }}>
-                    <a
-                      className="nav-link"
-                      id="profile-tab"
-                      data-toggle="tab"
-                      href="#one"
-                      role="tab"
-                      aria-controls="profile-tab"
-                      aria-selected="true"
-                    >
-                      Profile Information
-                    </a>
-
-                    <a
-                      className="nav-link"
-                      id="address-tab"
-                      data-toggle="tab"
-                      href="#one"
-                      role="tab"
-                      aria-controls="address-tab"
-                      aria-selected="true"
-                    >
-                      Manage Addresses
-                    </a>
-
-                    <a
-                      className="nav-link"
-                      id="pancard-tab"
-                      data-toggle="tab"
-                      href="#one"
-                      role="tab"
-                      aria-controls="pancard-tab"
-                      aria-selected="true"
-                    >
-                      Pan Card Information
-                    </a>
+                    <i className="fa fa-user" />
                   </div>
-                </li>
 
-                {/* <ul className="">
-                                    <li>
-                                        <a className="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">
-                                            Account Settings
-                                        </a>
-                                    </li>
-                                </ul> */}
-              </ul>
-            </div>
+                  Hello,
+                  <br />
+                  Aqua freax
+                </div>
+              </li>
+            </ul>
           </div>
-          <div className="col-7 productList card" style={{ padding: 0 }}>
-            <div className="tab-content" id="myTabContent">
-              <div
-                className="tab-pane fade show active"
-                id="profile"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-              >
-                home{' '}
-              </div>
-              <div
-                className="tab-pane fade"
-                id="address"
-                role="tabpanel"
-                aria-labelledby="address-tab"
-              >
-                Profile
-              </div>
-              <div
-                className="tab-pane fade"
-                id="contact"
-                role="tabpanel"
-                aria-labelledby="pancard-tab"
-              >
-                Contact
-              </div>
-            </div>
+          <div id="" className="nav nav-tabs mt-3 card">
+            <ul className="Account-side_sect mb-0">
+              <li className="text-secondary text-uppercase">
+                <a className="nav-link" href="/myorders">
+                  <i className="fa fa-suitcase" /> My Orders
+                </a>
+              </li>
+              {
+                ACCOUNT.map((items, index) => {
+                  return <TabContainer key={`account_tabs_${index}`} {...items} />
+                })
+              }
+            </ul>
+          </div>
+        </div>
+        <div className="col-7 productList card" style={{ padding: 0 }}>
+          <div className="tab-content" id="myTabContent">
+            <PersonalInformation />
+            <ManageAddresses />
+            <PanCardInformation />
           </div>
         </div>
       </div>
@@ -140,3 +115,55 @@ function Account() {
 Account.propTypes = {};
 
 export default Account;
+
+
+
+const TabHead = ({ name, icon, index }) => {
+  const id = name.toLowerCase().split(' ').join('_');
+  return (
+    <a
+    className={`nav-link disabled`}
+      id={`${id}-tab`}
+      data-toggle="tab"
+      href={`#${id}`}
+      role="tab"
+      aria-controls={`${id}-tab`}
+      aria-selected="true"
+    >
+      <i className={icon} /> {name}
+    </a>
+  )
+}
+
+const TabSubList = ({ name, is_active, index }) => {
+  const id = name.toLowerCase().split(' ').join('_');
+  return (
+    <a
+      className={`nav-link${is_active ? '': ' disabled not-allowed'}`}
+      id={`${id}-tab`}
+      data-toggle="tab"
+      href={`#${id}`}
+      role="tab"
+      aria-controls={`${id}-tab`}
+      aria-selected="true"
+    >
+      {name}
+    </a>
+  )
+}
+
+const TabContainer = ({ name, sections }) => {
+  return (
+    <li className="text-secondary text-uppercase">
+      <TabHead name={name} icon="fa fa-user" index="1" />
+      <div className="Account-sublist" style={{ paddingBottom: 10 }}>
+        {
+          sections.map((section, index) => {
+            return <TabSubList key={`account_section_tabs_${index}`} {...section}/>
+          })
+
+        }
+      </div>
+    </li>
+  )
+}
