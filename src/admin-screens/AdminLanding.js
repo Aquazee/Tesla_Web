@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
 import Footer from '../domain/Footer';
-import Header from '../domain/Header/header';
+import Header from '../domain/Header/Header';
 import { AdminRoutes } from '../routes';
 
 const AdminLanding = () => {
