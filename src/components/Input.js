@@ -1,21 +1,13 @@
 import React from "react";
 
-function Input({ register, ...props }) {
+const Input = ({ register, className, style, name, error, ...rest }) => {
   return (
     <input
-      id={props.id}
-      type={props.type || 'text'}
-      placeholder={props.placeholder}
-      className={`cinput ${props.className}`}
-      onChange={props.onChange}
-      required={props.required}
+      {...register(name)} 
+      {...rest}
+      className={`${className}${ error ? ' border border-danger' : ''}`}
       autoComplete="off"
-      value={props.value}
-      min={props.min}
-      data-id={props.dataId}
-      pattern={props.pattern}
-      maxLength={props.maxLength}
-      style={{ ...props.style, ...styles }}
+      style={{ ...styles, style  }}
     />
   );
 }
