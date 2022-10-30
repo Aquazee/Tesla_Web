@@ -1,9 +1,10 @@
 import React from 'react';
 import Footer from '../domain/Footer';
-import Header from '../domain/Header/header';
+import Header from '../domain/Header/Header';
 import { UserRoutes } from '../routes';
 
 const UserLanding = () => {
+
   return (
     <div className="container-fluid">
       <div className="row">
