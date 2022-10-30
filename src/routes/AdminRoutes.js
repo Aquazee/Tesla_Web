@@ -58,11 +58,11 @@ const RoutesList = () =>
 
 const AdminRoutes = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { user } = useAuth();
+  const { admin } = useAuth();
 
   useEffect(() => {
-    if (user) setIsLoggedIn(true);
-  }, [user]);
+    if (admin) setIsLoggedIn(true);
+  }, [admin]);
 
   return (
     <BrowserRouter>
