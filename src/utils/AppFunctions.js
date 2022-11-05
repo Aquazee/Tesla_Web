@@ -1,8 +1,9 @@
 import Message from '../utils/Message';
+import Constants from './Constants';
 
 const AppFunctions = {};
 
-AppFunctions.getStoredUserDetails = () => JSON.parse(localStorage.getItem('user'));
+AppFunctions.getStoredUserDetails = () => AppFunctions.getStoreData(Constants.STORAGEKEYS.USER);
 
 AppFunctions.setTitle = (title) => { document.title = `${title} | Tesla`; };
 
@@ -45,6 +46,19 @@ AppFunctions.getMessage = (resp) => {
     }
   }
   return Message.Register.Success
+}
+
+AppFunctions.setStoreData = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+AppFunctions.getStoreData = (key) => {
+  const value = localStorage.getItem(key);
+  return JSON.parse(value)
+}
+
+AppFunctions.removeStoreData = (key) => {
+  localStorage.removeItem(key);
 }
 
 export default AppFunctions;

@@ -245,7 +245,12 @@ const Constants = {
     {name: 'Wishlist', path: '/wishlist', icon: 'fa-solid fa-heart'},
     {name: 'Notifications', path: '/notifications', icon: 'fa-solid fa-bell'},
     {name: 'Logout', path: '/logout', icon: 'fa-solid fa-arrow-right-from-bracket'},
-  ]
+  ],
+  STORAGEKEYS: {
+    USER: 'user',
+    TOKEN: 'token',
+    TEMPGRIDITEM: 'temp_grid_item',
+  }
 };
 
 export default Constants;

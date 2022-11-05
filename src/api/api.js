@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { AppFunctions, Constants } from '../utils';
 import { REACT_APP_BASE_URL } from '../config';
 
 const headers = {
@@ -14,7 +15,7 @@ const Auth_api = axios.create({
 Auth_api.interceptors.request.use(
   (config) => {
     // perform a task before the request is sent
-    const data = JSON.parse(localStorage.getItem('user'));
+    const data = AppFunctions.getStoreData(Constants.STORAGEKEYS.USER);
     const token = data?.tokens.access.token;
     config.headers.Authorization = token ? `Bearer ${token}` : '';
     return config;
@@ -44,16 +45,12 @@ const API = {
     return Auth_api.get('/users', { params });
   },
 
-  getParticipations(params) {
-    return Auth_api.get('/participations', { params });
+  getProductSearchData(params) {
+    return Auth_api.get('/product/search', { params });
   },
 
   getNotifications(params) {
     return Auth_api.get('/notifications', { params });
-  },
-
-  getUsersExcelSheet(params) {
-    return Auth_api.get('/users/excel/', { params });
   },
 
   getLatestAppByDate() {

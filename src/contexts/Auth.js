@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
 import { useApi } from './Api';
-import { AppFunctions } from '../utils';
+import { AppFunctions, Constants } from '../utils';
 
 const AuthContext = React.createContext();
 
@@ -25,8 +25,8 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const setAppData = () => {
-    const user = localStorage.getItem('user')
-    const token = localStorage.getItem('token')
+    const user = AppFunctions.getStoreData(Constants.STORAGEKEYS.USER)
+    const token = AppFunctions.getStoreData(Constants.STORAGEKEYS.TOKEN)
     const payload = {}
     if (user) {
       payload.user = JSON.parse(user)
@@ -43,8 +43,8 @@ export const AuthProvider = ({ children }) => {
       const response = await api.login(body);
       console.log(response);
       if (response.ok) {
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        AppFunctions.setStoreData(Constants.STORAGEKEYS.TOKEN, response.data.token)
+        AppFunctions.setStoreData(Constants.STORAGEKEYS.USER, response.data.user)
         dispatch({ type: 'setLoginData', payload: response.data });
       }
       return response;
@@ -66,12 +66,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const setLoggedIn = (token) => {
-    localStorage.setItem('token', JSON.stringify(token));
+    AppFunctions.setStoreData('token', token)
     dispatch({ type: 'setIsLoggedIn', payload: true });
   }
 
   const setAdminPortal = (token) => {
-    localStorage.setItem('token', JSON.stringify(token));
     dispatch({ type: 'setIsAdminPortal', payload: true });
   }
 
@@ -80,7 +79,7 @@ export const AuthProvider = ({ children }) => {
       dispatch({ type: 'setIsLoading', payload: true });
       const { refresh } = AppFunctions.getStoredUserDetails().tokens.refresh;
       await api.logout(refresh);
-      localStorage.removeItem('user');
+      AppFunctions.removeStoreData(Constants.STORAGEKEYS.USER)
       dispatch({ type: 'reset' });
     } catch (err) {
       dispatch({ type: 'setError', payload: err.message });

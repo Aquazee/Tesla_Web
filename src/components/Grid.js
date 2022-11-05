@@ -19,7 +19,7 @@ import {
 import NotificationAlert from 'react-notification-alert';
 
 import Dropdown from './Dropdown';
-import { Notification } from '../utils';
+import { AppFunctions, Notification, Constants } from '../utils';
 
 // By default, it will render header names by capitalizing the actual keys in object, Will remove _, Capitalize case
 // If customized header name is required,
@@ -189,7 +189,7 @@ function Grid({
   };
 
   const onClick = (action, id) => {
-    localStorage.setItem('tempGridItem', JSON.stringify());
+    AppFunctions.setStoreData(Constants.STORAGEKEYS.TEMPGRIDITEM, id)
     onPress(action, id);
   };
 
@@ -332,7 +332,7 @@ function Action({ onPress, rowData, name }) {
         return true;
       }
     }
-    localStorage.setItem('tempGridItem', JSON.stringify());
+    AppFunctions.setStoreData(Constants.STORAGEKEYS.TEMPGRIDITEM, rowData);
     onPress(name, rowData);
   };
   return (
