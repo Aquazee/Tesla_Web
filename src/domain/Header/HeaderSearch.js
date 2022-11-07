@@ -11,6 +11,11 @@ const HeaderSearch = () => {
 
   const submitSearch = (data) => {
     console.log('searched ', data)
+    window.location.href = '/search?' + toUrlParams(data);
+  }
+
+  const toUrlParams = (data) => {
+    return Object.keys(data).map(i => { return `${i}=${data[i]}`}).join('&')
   }
 
   return (
