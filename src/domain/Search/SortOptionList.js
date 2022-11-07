@@ -1,7 +1,29 @@
-import React from 'react';
-import { Constants } from "../../utils";
+import React, { useEffect } from 'react';
 
-const SortItemComponent = ({ name, index, disabled }) => {
+import { Constants } from "../../utils";
+import { useProduct } from '../../contexts';
+
+const SortItemComponent = ({ name, type, field, index, disabled }) => {
+  const { getProductSearchData, searchData } = useProduct();
+
+  useEffect(() => {
+    load()
+  })
+
+  const load = () => {
+    if (!searchData) {
+      let urlParams = new URLSearchParams(window.location.search);
+      getProductSearchData(urlParams)
+    }
+  }
+
+  const onSort = () => {
+    let urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('sort_field', field)
+    urlParams.set('sort_type', type)
+    getProductSearchData(urlParams)
+  }
+
   return (
     <li className="nav-item">
       <a
@@ -11,8 +33,10 @@ const SortItemComponent = ({ name, index, disabled }) => {
         href={`#${index}`}
         role="tab"
         aria-controls={`#${index}`}
-        aria-selected="false">
+        aria-selected="false"
+        onClick={onSort}>
         {name}
+        
       </a>
     </li>
   )
@@ -20,7 +44,7 @@ const SortItemComponent = ({ name, index, disabled }) => {
 
 const SortOptionList = () => {
   return Constants.SORTOPTIONS.map((sortItem, index) =>
-    <SortItemComponent name={sortItem.name} key={`SortItemList${index}`} disabled={index == 0} />
+    <SortItemComponent {...sortItem} key={`SortItemList${index}`} disabled={index == 0} />
   )
 }
 
