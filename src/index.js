@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import * as bootstrap from 'bootstrap';
+import './utils/Prototypes';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,7 +15,8 @@ import {
   AuthProvider,
   UserDataProvider,
   NotificationDataProvider,
-  AppDataProvider
+  AppDataProvider,
+  ProductProvider
 } from './contexts';
 import reportWebVitals from './reportWebVitals';
 
@@ -40,9 +42,11 @@ ReactDOM.render(
     <UserDataProvider>
       <AppDataProvider>
         <NotificationDataProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <ProductProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </ProductProvider>
         </NotificationDataProvider>
       </AppDataProvider>
     </UserDataProvider>
