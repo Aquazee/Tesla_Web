@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
     const token = AppFunctions.getStoreData(Constants.STORAGEKEYS.TOKEN)
     const payload = {}
     if (user) {
-      payload.user = JSON.parse(user)
+      payload.user = user
     }
     if(token) {
       payload.token = token
