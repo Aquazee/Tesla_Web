@@ -15,8 +15,8 @@ const Auth_api = axios.create({
 Auth_api.interceptors.request.use(
   (config) => {
     // perform a task before the request is sent
-    const data = AppFunctions.getStoreData(Constants.STORAGEKEYS.USER);
-    const token = data?.tokens.access.token;
+    const token = AppFunctions.getStoreData(Constants.STORAGEKEYS.TOKEN);
+    // const token = data?.tokens.access.token;
     config.headers.Authorization = token ? `Bearer ${token}` : '';
     return config;
   },

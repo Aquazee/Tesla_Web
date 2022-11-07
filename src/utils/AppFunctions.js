@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Message from '../utils/Message';
 import Constants from './Constants';
 
@@ -45,7 +46,7 @@ AppFunctions.getMessage = (resp) => {
       return Message.ErrorOccurred;
     }
   }
-  return Message.Register.Success
+  return Message.Register.Success;
 }
 
 AppFunctions.setStoreData = (key, value) => {
@@ -54,11 +55,28 @@ AppFunctions.setStoreData = (key, value) => {
 
 AppFunctions.getStoreData = (key) => {
   const value = localStorage.getItem(key);
-  return JSON.parse(value)
+  if (AppFunctions.isJson(value)) {
+    return JSON.parse(value);
+  } else {
+    return value;
+  }
 }
 
 AppFunctions.removeStoreData = (key) => {
   localStorage.removeItem(key);
+}
+
+AppFunctions.isJson = (params) => {
+  try {
+    JSON.parse(params);
+  } catch (e) {
+    return false;
+  }
+  return true;
+}
+
+AppFunctions.calculatePercentage = (param1, param2) => {
+  return (((param1 - param2) / param1) * 100).toFixed(0);
 }
 
 export default AppFunctions;
