@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import * as bootstrap from 'bootstrap';
-import './utils/Prototypes';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
