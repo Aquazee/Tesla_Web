@@ -161,18 +161,28 @@ const Constants = {
   SORTOPTIONS: [
     {
       name: 'Sort By',
+      field: 'created_date',
+      type: 'asc'
     },
     {
       name: 'Popularity',
+      field: 'ratings',
+      type: 'desc'
     },
     {
       name: 'Newest First',
+      field: 'created_date',
+      type: 'asc'
     },
     {
       name: 'Price -- Low to High',
+      field: 'price',
+      type: 'asc'
     },
     {
       name: 'Price -- High to Low',
+      field: 'price',
+      type: 'desc'
     },
   ],
   OFFERLIST: [
