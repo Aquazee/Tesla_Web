@@ -1,4 +1,4 @@
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
   content: '>';
 }
 
@@ -451,8 +451,7 @@ ul {
   padding-left: 6px;
 }
 
-.dly_btn {
-}
+.dly_btn {}
 
 .dly_label {
   padding: 6px 0px;
@@ -508,15 +507,23 @@ ul {
   color: #a0a0a0;
 }
 
-.likesection > span:last-child {
+.likesection>span:last-child {
   margin-left: 15px;
   font-size: 16px;
 }
-.likesection > span:first-child {
+
+.likesection>span:first-child {
   margin-right: 15px;
 }
 
 .like_sectangle {
   font-size: 25px;
   vertical-align: middle;
+}
+
+.delivery-input {
+  border: 0;
+  border-bottom: 1px solid #eee;
+  -webkit-appearance: none;
+  margin-left: 10px;
 }

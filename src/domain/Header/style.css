@@ -33,12 +33,38 @@ background-color: none !important;
   background-color: #fff;
 }
 
-
-.headerProducts:hover>.dropdown-menu {
-  display: block;
-}
-
 .headerProducts>.dropdown-toggle:active {
   /*Without this, clicking will make it sticky*/
     pointer-events: none;
+}
+
+
+#dropdown-menu > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  margin:2px auto;
+
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: red;
+  padding: 16px;
+  color: white;
+}
+
+.headerProducts:hover + .dropdown-content {
+  display: block;
 }

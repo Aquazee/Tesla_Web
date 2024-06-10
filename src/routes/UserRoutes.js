@@ -104,24 +104,6 @@ const UserRoutes = ({ session }) => {
           </Route>
         ))
       }
-      {/* <Route exact path='/' >
-        <Dashboard route={{ name: 'Account' }} />
-      </Route>
-      <Route path='/product' >
-        <ProductDetails route={{ name: 'Account' }} />
-      </Route>
-      <Route path='/checkout' >
-        <Checkout route={{ name: 'Checkout' }} />
-      </Route>
-      <Route path='/account' >
-        <Account route={{ name: 'Account' }} />
-      </Route>
-      <Route path='/account' >
-        <Account route={{ name: 'Account' }} />
-      </Route>
-      <Route path='/account' >
-        <Account route={{ name: 'Account' }} />
-      </Route> */}
     </Switch>
   );
 }

@@ -218,8 +218,8 @@ const DeliverySection = () => {
         <div className="dly_label">Delivery</div>
       </div>
       <div className="col-10">
-        <div className="dly_parent">
-          <div className="groupinput">
+        <div className="">
+          <div className="">
             <i
               className="fa fa-map-marker pull-left dly_label"
               style={{ paddingTop: 8, paddingVertical: 8 }}
@@ -227,7 +227,7 @@ const DeliverySection = () => {
             />
             <input
               type="number"
-              className="dly_input pull-left"
+              className="pull-left delivery-input"
               id="inputEmail3"
               placeholder="Enter Delivery Pincode"
             />

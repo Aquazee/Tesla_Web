@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../domain/Footer';
-import Header from '../domain/Header/Header';
+import Header from '../domain/Header/header';
 import { UserRoutes } from '../routes';
 
 const UserLanding = () => {

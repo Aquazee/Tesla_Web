@@ -6,7 +6,7 @@ import { Container, Nav, NavItem, NavLink } from 'reactstrap';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer row">
       <Container fluid>
         <Nav>
           <NavItem>

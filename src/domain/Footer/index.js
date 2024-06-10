@@ -6,8 +6,8 @@ const { ABOUT, FOOTERBOTTOMLIST, FOOTERCONTACT, HELP, POLICY, SOCIAL } = Constan
 
 function Footer() {
   return (
-    <footer className="footer" style={styles.footer}>
-      <div className="row">
+    <footer className="footer row" style={styles.footer}>
+      <div className="row w-100">
         <div className="col-6">
           <div className="row">
             <div className="col-3">
