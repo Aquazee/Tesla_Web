@@ -4,7 +4,7 @@
   - [Webpack](https://webpack.js.org/): Bundling, Transpiling, Loaders, etc. 
   - [Eslint](https://eslint.org/): Standard industry practices
   - [Prettier](https://prettier.io/): Code Formatter 
-  - Docker: Containerization
+  - [Docker](https://www.docker.com/): App Containerization
   
 # Implementations
  - Jwt Auth Integration
