@@ -19,13 +19,13 @@ const PaymentDetailsForm = () => {
   }
 
   return (
-    <div className='mb-3'>
-      <div className="card card-body p-1 ">
+    <div className='card mb-3'>
+      <div className="card-header p-1" id="paymentCheckout">
         <button className="btn btn-primary bg-transparent text-dark w-100 border-0 text-left bg-white bold" type="button" data-toggle="collapse" data-target="#paymentForm" aria-expanded="false" aria-controls="paymentForm">
           Payment
         </button>
       </div>
-      <div className="collapse card card-body" id="paymentForm">
+      <div className="collapse card-body" id="paymentForm" aria-labelledby='#paymentCheckout' data-parent="#checkout">
         <div className="d-block my-3">
           <div className="custom-control custom-radio">
             <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" required="" />

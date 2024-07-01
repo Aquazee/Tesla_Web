@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import LoginForm from '../domain/AuthForm/LoginForm'
-import RegisterForm from '../domain/AuthForm/RegisterForm'
+import LoginForm from '../domain/AuthForm/LoginForm';
+import RegisterForm from '../domain/AuthForm/RegisterForm';
 
 const AuthForm = () => {
   let signUpButton, signInButton, container;

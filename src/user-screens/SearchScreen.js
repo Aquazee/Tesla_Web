@@ -6,10 +6,15 @@ import Filters from '../domain/Filters/Filters';
 import SearchItem from '../domain/ListItem/SearchItem';
 import '../domain/Search/style.css';
 import { useProduct } from '../contexts';
+import NoResultsFound from 'components/NoResultFound';
 
 function SearchScreen({ heading }) {
 
   const { getProductSearchData, searchData } = useProduct();
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <div className="col-12">
@@ -37,9 +42,9 @@ function SearchScreen({ heading }) {
                         role="tabpanel"
                         aria-labelledby="one-tab">
                         {
-                          searchData && searchData.docs.map((doc, index) => {
+                          searchData.length > 0 ? searchData.docs.map((doc, index) => {
                             return <SearchItem key={`search_item_${index}`} {...doc} />
-                          })
+                          }) : <NoResultsFound />
                         }
                       </div>
                     </div>

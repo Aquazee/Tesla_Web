@@ -42,7 +42,7 @@ function Checkout({ route }) {
           <RedeemForm />
         </div>
 
-        <div className="col-md-8 order-md-1">
+        <div className="accordion col-md-8 order-md-1" id="checkout">
           <ContactForm />
           <BillingDetailsForm />
           <PaymentDetailsForm />

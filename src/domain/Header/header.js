@@ -88,7 +88,7 @@ const MenuItem = () => {
 };
 
 const Header = () => {
-  const { isLoggedIn, setLoggedIn, user } = useAuth();
+  const { isLoggedIn, setLoggedIn, user, } = useAuth();
 
 
   useEffect(() => {
@@ -120,11 +120,11 @@ const Header = () => {
         <div className="col-3 collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto float-end">
             <li className="nav-item">
-              <AccountDropDown isLoggedIn={isLoggedIn} name={user?.first_name} />
+              <AccountDropDown isLoggedIn={isLoggedIn} name={user?.name} />
             </li>
             {/* <Dropdown label={'more'} onSelect={()=>{}} options={['Notification Preferences', 'Sell on Triangle', '24/7 Customer Care', 'Advertise', 'Download App']}/> */}
             <li className="nav-item dropdown header-more ml-2">
-              <HoverableDropdown label="More" options={Constants.MORELIST} />
+              <HoverableDropdown label={'More'} options={Constants.MORELIST} />
             </li>
             <li className="nav-item ml-2">
               <a className="nav-link text-white cart-icon" href="/checkout">

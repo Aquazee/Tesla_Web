@@ -152,6 +152,7 @@ const reducer = (state, { type, payload }) => {
       return {
         ...state,
         user: payload,
+        isLoggedIn: true,
         isLoading: false
       };
     case 'setLoginData':

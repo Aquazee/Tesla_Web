@@ -18,6 +18,7 @@ const initialState = {
   isLoading: true,
   isSuccess: false,
   isError: false,
+  searchData: []
 };
 
 export const ProductProvider = ({ children }) => {

@@ -47,7 +47,13 @@ const data = [
     brands: ['Apple', 'Dell', 'HP', 'Lenovo', 'Acer', 'Microsoft', 'Asus'],
     offers: 'Upto 10% off',
     img: Notebook
-  }
+  },
+  {
+    name: 'Cooker',
+    brands: ['Prestige', 'Pigeon', 'Hindwares', 'Hawkins Futura', 'Usha', 'Bhalaria', 'Surya'],
+    offers: 'Min 50% off',
+    img: cooker
+  },
 ];
 
 function Item({ item }) {

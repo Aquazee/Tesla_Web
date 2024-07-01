@@ -80,11 +80,11 @@ const ExcludeGuestRoute = ['/login'];
 const ExcludeLoggedUserRoute = ['/account', '/orders'];
 
 const UserRoutes = ({ session }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {isLoggedIn, setLoggedIn } = useAuth()
   const { token, user } = useAuth();
 
   useEffect(() => {
-    if (user) setIsLoggedIn(true);
+    if (user) setLoggedIn(true);
   }, [user]);
 
   const getGuestRoutes = () =>
@@ -92,14 +92,14 @@ const UserRoutes = ({ session }) => {
 
 
   const getLoggedInRoutes = () =>
-  AllRoutes.filter((route) => ExcludeGuestRoute.indexOf(route.path) === -1);
+    AllRoutes.filter((route) => ExcludeGuestRoute.indexOf(route.path) === -1);
 
-  // (!isLoggedIn ? getGuestRoutes() : getLoggedInRoutes())
+  const routes = isLoggedIn ?  getLoggedInRoutes() : getGuestRoutes()
   return (
     <Switch>
       {
-       (!isLoggedIn ? getGuestRoutes() : getLoggedInRoutes()).map((route, index) => (
-          <Route exact={route.path === '/' || route.path === '/account' } key={`${index}_routes`} path={route.path} >
+        routes.map((route, index) => (
+          <Route exact={route.path === '/' || route.path === '/account'} key={`${index}_routes`} path={route.path} >
             <route.component route={route} />
           </Route>
         ))

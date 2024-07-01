@@ -19,13 +19,13 @@ const BillingDetailsForm = () => {
   }
 
   return (
-    <div className='mb-1'>
-      <div className="card card-body p-1">
+    <div className='card accordion-item mb-1'>
+      <div className="card-header p-1" id="billingForm">
         <button className="btn btn-primary bg-transparent text-dark w-100 border-0 text-left bg-white bold" type="button" data-toggle="collapse" data-target="#billingDetailsForm" aria-expanded="false" aria-controls="billingDetailsForm">
           Billing Details
         </button>
       </div>
-      <div className="collapse card card-body" id="billingDetailsForm">
+      <div className="collapse card card-body" id="billingDetailsForm" aria-labelledby='#billingForm' data-parent="#checkout">
         <InputBox
           className="mb-3"
           label="Address Line 1"
