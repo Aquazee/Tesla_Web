@@ -16,16 +16,16 @@
  - PWA
 
 # Screens Added
-Auth Form : Complete
- - Login 
- - Signup 
-Home
-Navigation Menu
-Search Products
-Product Details
-Checkout
-Delivery Tracking
-404 Not Found
+ - Auth Form : Complete
+   - Login 
+   - Signup 
+ - Home
+ - Navigation Menu
+ - Search Products
+ - Product Details
+ - Checkout
+ - Delivery Tracking
+ - 404 Not Found
 
 # Dynamic Bindings
  - Auth : Complete
