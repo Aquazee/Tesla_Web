@@ -13,3 +13,4 @@ export const clothes = require('../assets/img/Deals/clothes.jpg');
 
 // Icons
 export const BadgeIcon = require('../assets/img/badge.png');
+export const NoDataFound = require('../assets/img/no-data-found.jpg');
