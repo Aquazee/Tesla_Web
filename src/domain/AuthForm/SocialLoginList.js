@@ -1,11 +1,13 @@
 import React from "react";
 import { Constants } from "../../utils";
+import { useTheme } from "contexts/ThemeProvider";
 
 
 const SocialLoginItems = ({ name, icon, path, lastItem }) => {
+  const { theme } = useTheme()
   return (
-    <a href={`${Constants.BACKEND_DOMAIN}${path}`} className={`social`}>
-      <i className={icon}></i>
+    <a href={`${Constants.BACKEND_DOMAIN}${path}`} className='social' style={{ borderColor: theme.tertiary }}>
+      <i className={icon} style={{color: theme.primary}}></i>
     </a>
   )
 }

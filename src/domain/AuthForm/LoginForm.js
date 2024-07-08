@@ -7,9 +7,11 @@ import LoginSchema from '../../schema/login-user.schema'
 import UseYupValidationResolver from '../../utils/UseYupValidationResolver';
 import { useAuth } from '../../contexts';
 import './style.css';
+import { useTheme } from 'contexts/ThemeProvider';
 
 const LoginForm = ({ }) => {
-  const { login } = useAuth()
+  const { login } = useAuth();
+  const { theme } = useTheme();
   const { handleSubmit, reset, formState: { errors }, register } = useForm({ resolver: UseYupValidationResolver(LoginSchema) });
 
   const submitLogin = async (data) => {
@@ -32,7 +34,7 @@ const LoginForm = ({ }) => {
   return (
     <div className="form-container sign-in-container">
       <form name='login' className='cform needs-validation' onSubmit={handleSubmit((data) => submitLogin(data))} noValidate>
-        <h1>Sign in</h1>
+        <h1 style={{color: theme.primary}}>Sign in</h1>
         <SocialLoginList />
         <h5 style={{ color: '#cedde9' }}>OR</h5>
         <div className=''>
@@ -62,7 +64,10 @@ const LoginForm = ({ }) => {
           {errors.password && errors.password.type === "required" && <span className='float-left text-danger'>{errors.password.message}</span>}
           <a className='float-left' href="/forgot-password">Forgot password?</a>
         </div>
-        <button className='mt-3 cbutton' type='submit'>Sign In</button>
+        <button className='mt-3 cbutton' style={{
+          border: `1px solid ${theme.secondary}`,
+          backgroundColor: theme.primary
+        }} type='submit'>Sign In</button>
       </form>
     </div>
   )

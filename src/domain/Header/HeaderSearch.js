@@ -21,7 +21,7 @@ const HeaderSearch = () => {
   }
 
   return (
-    <div className='col-9'>
+    <div className='col-8'>
       <form className="d-flex g-search col-8" role="search" onSubmit={handleSubmit((data) => submitSearch(data))} >
         <Input
           name='search'

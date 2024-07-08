@@ -10,9 +10,11 @@ import UseYupValidationResolver from '../../utils/UseYupValidationResolver';
 import './style.css'
 import { useAuth } from '../../contexts';
 import Form from '../../components/Form';
+import { useTheme } from 'contexts/ThemeProvider';
 
 const RegisterForm = ({ toggleForm }) => {
-  const { signup } = useAuth()
+  const { signup } = useAuth();
+  const { theme } = useTheme();
   const { handleSubmit, register, formState: { errors }, clearErrors } = useForm({ resolver: UseYupValidationResolver(RegisterSchema) });
 
   const submitRegister = (data) => {
@@ -26,7 +28,7 @@ const RegisterForm = ({ toggleForm }) => {
   return (
     <div className="form-container sign-up-container">
       <form className='cform' name='register' onSubmit={handleSubmit((data) => submitRegister(data))}>
-        <h2>Create Account</h2>
+        <h2 style={{color: theme.primary}}>Create Account</h2>
         <SocialLoginList />
         <h5 style={{ color: '#cedde9' }}>OR</h5>
         <div className='row'>
@@ -97,7 +99,10 @@ const RegisterForm = ({ toggleForm }) => {
           register={register}
         />
         {errors.cpassword && errors.cpassword.type === "required" && <span className='float-left text-danger'>{errors.cpassword.message}</span>}
-        <button className='mt-3 cbutton' id="sign-up" type='submit'>Sign Up</button>
+        <button className='mt-3 cbutton' id="sign-up" type='submit' style={{
+          border: `1px solid ${theme.secondary}`,
+          backgroundColor: theme.primary,
+        }}>Sign Up</button>
       </form>
     </div>
   )

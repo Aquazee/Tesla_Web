@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import LoginForm from '../domain/AuthForm/LoginForm';
 import RegisterForm from '../domain/AuthForm/RegisterForm';
+import { useTheme } from 'contexts/ThemeProvider';
 
 const AuthForm = () => {
   let signUpButton, signInButton, container;
@@ -61,18 +62,19 @@ const AuthForm = () => {
 export default AuthForm;
 
 const OverlayContainer = () => {
+  const {theme} = useTheme();
   return (
     <div className="overlay-container">
-      <div className="overlay">
+      <div className="overlay" style={{backgroundColor: theme.primary, border: `2px solid ${theme.primary}`}}>
         <div className="overlay-panel overlay-left">
           <h1>Welcome Back!</h1>
           <p>To keep connected with us please login with your personal info</p>
-          <button className="ghost cbutton" id="signIn">Sign In</button>
+          <button className="ghost cbutton" id="signIn" style={{border: `2px solid ${theme.tertiary}`}}>Sign In</button>
         </div>
         <div className="overlay-panel overlay-right">
           <h1>Hello!</h1>
           <p>Enter your personal details and start journey with us</p>
-          <button className="ghost cbutton" id="signUp">Sign Up</button>
+          <button className="ghost cbutton" id="signUp" style={{border: `2px solid ${theme.tertiary}`}}>Sign Up</button>
         </div>
       </div>
     </div>
