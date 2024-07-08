@@ -65,9 +65,9 @@ function Item({ item }) {
     <div className="card DItem">
       <img className="d-block" alt="Hindware" src={item.img} />
       <div className="content">
-        <h5>{item.name}</h5>
-        <h6>{brands}</h6>
-        <p>{item.offers}</p>
+        <p className="h5">{item.name}</p>
+        <p className='m-0'>{brands}</p>
+        <small>{item.offers}</small>
       </div>
     </div>
   );

@@ -168,7 +168,7 @@ const ProductFaq = () => {
         <br />
         <div className="row">
           <div className="col-9">
-            <small style={{ color: '#9c9a9a' }}>Tesla Customer</small>
+            <small style={{ color: '#9c9a9a' }}>Ekart Customer</small>
             <br />
             <small style={{ color: '#9c9a9a' }}>
               <i className="fa fa-check-circle" aria-hidden="true" /> Certified Buyer

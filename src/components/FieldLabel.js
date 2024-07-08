@@ -10,4 +10,4 @@ function FieldLabel(props) {
   );
 }
 
-export default FieldLabel;
+export default React.memo(FieldLabel);

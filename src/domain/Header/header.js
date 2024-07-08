@@ -9,6 +9,8 @@ import HeaderSearch from './HeaderSearch';
 import MoreListItems from './MoreListItems';
 import AccountDropDown from './AccountDropDown';
 import HoverableDropdown from '../../components/HoverableDropdown';
+import Text from 'components/Text';
+import { useTheme } from 'contexts/ThemeProvider';
 
 const myWidth = getWindowDimensions().width * (97 / 100);
 
@@ -32,7 +34,7 @@ const MenuItem = () => {
       .join(' & ');
     return (
       <>
-        <div id="dropdown-menu" onMouseOver={() => onHover(MENU_DATA[0][j].title)} onMouseOut={() => onHover('')} className="" style={{ margin: '0 auto' }} key={j + indexj}>
+        <div id="dropdown-menu" onMouseOver={() => onHover(MENU_DATA[0][j].title)} onMouseOut={() => onHover('')} className="" key={j + indexj}>
           <a
             className="mr-3 nav-link dropdown-toggle footerBtmlistitem headerProducts"
             href="#"
@@ -70,7 +72,7 @@ const MenuItem = () => {
                           key={'l' + lIndex}
                           className={`dropdown-item ${l.type ? 'font-weight-500' : ''}`}
                           href={'/product'}
-                          // href={l.url}
+                        // href={l.url}
                         >
                           {title}
                         </a>
@@ -89,7 +91,7 @@ const MenuItem = () => {
 
 const Header = () => {
   const { isLoggedIn, setLoggedIn, user, } = useAuth();
-
+  const { changeTheme, selectedTheme, theme } = useTheme()
 
   useEffect(() => {
     const tokenExtras = window.location.href.split('token=')[1];
@@ -99,11 +101,12 @@ const Header = () => {
     }
   })
 
+  const menuColor = theme.grey2;
   return (
-    <div className='row'>
-      <nav className="mb-0 navbar navbar-expand-lg navbar-light container-fluid pr-15 pl-15 headerSpacing headerNavb text-white">
-        <a className="navbar-brand text-white" href="/">
-          Tesla
+    <div className='row' >
+      <nav className="mb-0 navbar navbar-expand-lg navbar-light container-fluid pr-15 pl-15 headerSpacing headerNavb" style={{backgroundColor: theme.primary}} >
+        <a className="navbar-brand" href="/">
+          <Text className="font-weight-bold" color='tertiary'>Ekart</Text>
         </a>
         <button
           className="navbar-toggler"
@@ -117,7 +120,7 @@ const Header = () => {
           <span className="navbar-toggler-icon" />
         </button>
         <HeaderSearch />
-        <div className="col-3 collapse navbar-collapse " id="navbarSupportedContent">
+        <div className="col-4 collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto float-end">
             <li className="nav-item">
               <AccountDropDown isLoggedIn={isLoggedIn} name={user?.name} />
@@ -127,10 +130,20 @@ const Header = () => {
               <HoverableDropdown label={'More'} options={Constants.MORELIST} />
             </li>
             <li className="nav-item ml-2">
-              <a className="nav-link text-white cart-icon" href="/checkout">
+              <a className="nav-link cart-icon" href="/checkout">
                 <i className="fa fa-shopping-cart mr-2" aria-hidden="true" />
                 Cart
               </a>
+            </li>
+            <li className='nav-item'>
+              <div className="btn-group btn-group-toggle theme-toggle ml-3" data-toggle="buttons">
+                <label className="btn btn-link active text-decoration-none" style={{backgroundColor: Constants.THEME_TYPES.LIGHT === selectedTheme ? theme.quaternary : '#eee', color: theme.primary   }}>
+                  <input type="radio" name="options" id="option1" checked={Constants.THEME_TYPES.LIGHT === selectedTheme} onChange={() => changeTheme(Constants.THEME_TYPES.LIGHT)} /> <small><Text color={menuColor}>Light</Text></small>
+                </label>
+                <label className="btn btn-link text-decoration-none" style={{backgroundColor: Constants.THEME_TYPES.LIGHT === selectedTheme ?  '#eee' : theme.tertiary, color: theme.quaternary }}>
+                  <input type="radio" name="options" id="option3" checked={Constants.THEME_TYPES.DARK === selectedTheme} onChange={() => changeTheme(Constants.THEME_TYPES.DARK)} /> <small><Text color={menuColor}>Dark</Text></small>
+                </label>
+              </div>
             </li>
           </ul>
         </div>

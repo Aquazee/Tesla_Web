@@ -4,11 +4,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Input } from '../../components';
 import './style.css';
 import HeaderSearchSchema from '../../schema/header-search.schema';
+import Text from 'components/Text';
+import { useTheme } from 'contexts/ThemeProvider';
 
 
 const HeaderSearch = () => {
   const { handleSubmit, reset, formState: { errors }, register } = useForm({ resolver: yupResolver(HeaderSearchSchema) });
-
+  const { theme } = useTheme()
   const submitSearch = (data) => {
     console.log('searched ', data)
     window.location.href = '/search?' + toUrlParams(data);
@@ -33,7 +35,7 @@ const HeaderSearch = () => {
           className="btn btn-transparent"
           type="submit"
         >
-          <i className="fa fa-search text-white" />
+          <Text color={theme.quaternary}><i className="fa fa-search" style={{color: theme.quaternary}}/></Text>
         </button>
       </form>
     </div >

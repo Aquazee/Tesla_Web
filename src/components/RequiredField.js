@@ -4,4 +4,4 @@ function RequiredField() {
   return <span className="text-danger"> *</span>;
 }
 
-export default RequiredField;
+export default React.memo(RequiredField);

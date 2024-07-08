@@ -1,51 +1,36 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
+import Constants from '../../utils/Constants';
+
+const SliderItem = ({ src }) => {
+  return (
+    <div className="carousel-item">
+      <img
+        className="d-block w-100"
+        alt="Hindware"
+        src={src}
+      />
+    </div>
+  )
+}
 
 function Slider() {
+
+  useLayoutEffect(()=>{
+    const carouselItem = document.getElementsByClassName('carousel-item');
+    carouselItem[0].classList.add('active')
+  })
+
+  const sidebarItems = Constants?.SLIDER_IMGS?.map((item, index) => <SliderItem key={index.toString()} src={item} />)
+
   return (
     <div id="carouselExampleControls" className="carousel slide w-100 col-12" data-ride="carousel">
       <ol className="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active" />
         <li data-target="#carouselExampleIndicators" data-slide-to="1" />
         <li data-target="#carouselExampleIndicators" data-slide-to="2" />
-        <li data-target="#carouselExampleIndicators" data-slide-to="3" />
       </ol>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            className="d-block w-100"
-            alt="Hindware"
-            srcSet="https://rukminim1.flixcart.com/flap/3376/560/image/fd1aae7fd04875b0.jpg?q=50 2x, https://rukminim1.flixcart.com/flap/1688/280/image/fd1aae7fd04875b0.jpg?q=50 1x"
-            src="https://rukminim1.flixcart.com/flap/1688/280/image/fd1aae7fd04875b0.jpg?q=50"
-            data-tkid="M_83b697e7-10e6-4317-856f-da8382c72a73_2.MCNTH2G0P9MM"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            className="d-block w-100"
-            alt="m"
-            srcSet="https://rukminim1.flixcart.com/flap/3376/560/image/90826d7b77f045f6.jpg?q=50 2x, https://rukminim1.flixcart.com/flap/1688/280/image/90826d7b77f045f6.jpg?q=50 1x"
-            src="https://rukminim1.flixcart.com/flap/1688/280/image/90826d7b77f045f6.jpg?q=50"
-            data-tkid="M_83b697e7-10e6-4317-856f-da8382c72a73_2.ZHH22Q14QHOJ"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            className="d-block w-100"
-            alt="Livpure"
-            srcSet="https://rukminim1.flixcart.com/flap/3376/560/image/200391845d763840.jpg?q=50 2x, https://rukminim1.flixcart.com/flap/1688/280/image/200391845d763840.jpg?q=50 1x"
-            src="https://rukminim1.flixcart.com/flap/1688/280/image/200391845d763840.jpg?q=50"
-            data-tkid="M_83b697e7-10e6-4317-856f-da8382c72a73_2.QLK8AF35VHL3"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            className="d-block w-100_"
-            alt="Hindware"
-            srcSet="https://rukminim1.flixcart.com/flap/3376/560/image/fd1aae7fd04875b0.jpg?q=50 2x, https://rukminim1.flixcart.com/flap/1688/280/image/fd1aae7fd04875b0.jpg?q=50 1x"
-            src="https://rukminim1.flixcart.com/flap/1688/280/image/fd1aae7fd04875b0.jpg?q=50"
-            data-tkid="M_83b697e7-10e6-4317-856f-da8382c72a73_2.MCNTH2G0P9MM"
-          />
-        </div>
+        {sidebarItems}
       </div>
       <a
         className="carousel-control-prev"
@@ -71,4 +56,4 @@ function Slider() {
 
 Slider.propTypes = {};
 
-export default Slider;
+export default React.memo(Slider);

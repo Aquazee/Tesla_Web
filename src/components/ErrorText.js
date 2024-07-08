@@ -8,7 +8,7 @@ const ErrorText = ({ children }) => {
   );
 };
 
-export default ErrorText;
+export default React.memo(ErrorText);
 
 const styles = {
   fontSize: 10,

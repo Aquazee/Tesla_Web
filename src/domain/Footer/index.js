@@ -32,7 +32,7 @@ function Footer() {
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
                   <a href="#" style={styles.listitem}>
-                    Tesla Stories
+                    Ekart Stories
                   </a>
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -144,7 +144,7 @@ function Footer() {
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
                   <p style={styles.listitem}>
-                    Tesla Corp,
+                    Ekart Corp,
                     <br />
                     5th Avenue, Second Lane,
                     <br />
@@ -160,7 +160,7 @@ function Footer() {
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
                   <p style={styles.listitem}>
-                    Tesla Corp,
+                    Ekart Corp,
                     <br />
                     5th Avenue, Second Lane,
                     <br />

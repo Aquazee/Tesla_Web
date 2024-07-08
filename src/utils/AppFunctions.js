@@ -6,7 +6,7 @@ const AppFunctions = {};
 
 AppFunctions.getStoredUserDetails = () => AppFunctions.getStoreData(Constants.STORAGEKEYS.USER);
 
-AppFunctions.setTitle = (title) => { document.title = `${title} | Tesla`; };
+AppFunctions.setTitle = (title) => { document.title = `${title} | Ekart`; };
 
 AppFunctions.headerHideMenu = () => {
   document.querySelector('.allmenubar').classList.add('d-none')

@@ -88,8 +88,8 @@ const Constants = {
       {
         name: 'Mail Us',
         address: {
-          company_name: 'Tesla Corp',
-          line_1: 'Tesla Corp',
+          company_name: 'Ekart Corp',
+          line_1: 'Ekart Corp',
           line_2: '5th Avenue, Second Lane',
           city: 'CA',
           country: 'USA',
@@ -99,8 +99,8 @@ const Constants = {
       {
         name: 'Registered Office Address',
         address: {
-          company_name: 'Tesla Corp',
-          line_1: 'Tesla Corp',
+          company_name: 'Ekart Corp',
+          line_1: 'Ekart Corp',
           line_2: '5th Avenue, Second Lane',
           city: 'CA',
           country: 'USA',
@@ -110,7 +110,7 @@ const Constants = {
     ],
     FOOTERBOTTOMLIST: [
       {
-        name: 'Sell On Tesla',
+        name: 'Sell On Ekart',
         icon: 'fa-solid fa-question-circle',
         endpoint: '/seller/login'
       },
@@ -130,7 +130,7 @@ const Constants = {
         endpoint: '/help'
       },
       {
-        name: '© 2020-2022 Tesla.com',
+        name: '© 2020-2022 EKart.com',
         icon: undefined,
         endpoint: '/'
       }
@@ -229,7 +229,7 @@ const Constants = {
   },
   MORELIST: [
     {
-      name: 'Sell on Tesla',
+      name: 'Sell on Ekart',
       path: '/sell',
       icon: 'fa fa-line-chart'
     },
@@ -260,6 +260,15 @@ const Constants = {
     USER: 'user',
     TOKEN: 'token',
     TEMPGRIDITEM: 'temp_grid_item',
+  },
+  SLIDER_IMGS: [
+    "https://rukminim1.flixcart.com/flap/1688/280/image/fd1aae7fd04875b0.jpg?q=50",
+    "https://rukminim1.flixcart.com/flap/1688/280/image/90826d7b77f045f6.jpg?q=50",
+    "https://rukminim1.flixcart.com/flap/1688/280/image/200391845d763840.jpg?q=50",
+  ],
+  THEME_TYPES: {
+    LIGHT: 'light',
+    DARK: 'dark',
   }
 };
 

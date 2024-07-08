@@ -18,6 +18,7 @@ import {
   ProductProvider
 } from './contexts';
 import reportWebVitals from './reportWebVitals';
+import ThemeProvider from 'contexts/ThemeProvider';
 
 window.onload = function (e) {
   var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
@@ -36,14 +37,15 @@ window.onload = function (e) {
 }
 
 ReactDOM.render(
-
   <AuthProvider>
     <UserDataProvider>
       <AppDataProvider>
         <NotificationDataProvider>
           <ProductProvider>
             <BrowserRouter>
-              <App />
+              <ThemeProvider value='light'>
+                <App />
+              </ThemeProvider>
             </BrowserRouter>
           </ProductProvider>
         </NotificationDataProvider>
