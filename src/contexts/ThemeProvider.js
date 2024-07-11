@@ -63,7 +63,6 @@ export default function ThemeProvider(props) {
   const [selectedTheme, setSelectedTheme] = useState(themes.light);
 
   function changeTheme(theme) {
-    console.log(theme)
     if (theme === Constants.THEME_TYPES.LIGHT) {
       setTheme(themes.light);
       setSelectedTheme(Constants.THEME_TYPES.LIGHT)
@@ -72,7 +71,6 @@ export default function ThemeProvider(props) {
       setSelectedTheme(Constants.THEME_TYPES.DARK)
     }
   }
-  console.log('current Theme is : ', selectedTheme)
   return (
     <ThemeContext.Provider value={{ theme, selectedTheme, changeTheme }}>{props.children}</ThemeContext.Provider>
   );

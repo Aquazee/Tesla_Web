@@ -4,6 +4,15 @@ import API from '../api/api';
 import { useApi } from './Api';
 import { AppFunctions, Constants } from '../utils';
 
+const SearchItemData = {
+  custom_label: 'test',
+  review_and_ratings: {rating: 30, rated_customer_count: 20, review_count: 20},
+  cost: {
+    currency: '$', mrp: 50.0, gross_amount: 52.1, selling_price: 40.0, discount: 20
+  }
+
+}
+
 const ProductContext = React.createContext();
 export const useProduct = (props) => useContext(ProductContext);
 
@@ -18,7 +27,7 @@ const initialState = {
   isLoading: true,
   isSuccess: false,
   isError: false,
-  searchData: []
+  searchData: {docs: [SearchItemData]}
 };
 
 export const ProductProvider = ({ children }) => {

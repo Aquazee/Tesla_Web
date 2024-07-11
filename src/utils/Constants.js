@@ -254,7 +254,7 @@ const Constants = {
     {name: 'Orders', path: '/orders' , icon: 'fa-brands fa-first-order-alt'},
     {name: 'Wishlist', path: '/wishlist', icon: 'fa-solid fa-heart'},
     {name: 'Notifications', path: '/notifications', icon: 'fa-solid fa-bell'},
-    {name: 'Logout', path: '/logout', icon: 'fa-solid fa-arrow-right-from-bracket'},
+    {name: 'Logout', path: '#', icon: 'fa-solid fa-arrow-right-from-bracket'},
   ],
   STORAGEKEYS: {
     USER: 'user',

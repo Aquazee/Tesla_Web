@@ -17,9 +17,10 @@ const LoginForm = ({ }) => {
   const submitLogin = async (data) => {
     if (data) {
       const resp = await login(data)
-      window.location.href = 'http://localhost:3000'
+      // window.location.href = 'http://localhost:3000'
       // Notification({ notificationAlertRef, ...AppFunctions.getMessage(resp) });
-      reset()
+      reset();
+      window.location.href = '/'
     }
   }
 
@@ -34,7 +35,7 @@ const LoginForm = ({ }) => {
   return (
     <div className="form-container sign-in-container">
       <form name='login' className='cform needs-validation' onSubmit={handleSubmit((data) => submitLogin(data))} noValidate>
-        <h1 style={{color: theme.primary}}>Sign in</h1>
+        <h1 style={{ color: theme.primary }}>Sign in</h1>
         <SocialLoginList />
         <h5 style={{ color: '#cedde9' }}>OR</h5>
         <div className=''>
@@ -48,8 +49,9 @@ const LoginForm = ({ }) => {
             aria-invalid={errors.email ? "true" : "false"}
             aria-required="true"
             register={register}
+            showError={errors.email && errors.email.type === "required"}
+            errorMessage={errors?.email?.message}
           />
-          {errors.email && errors.email.type === "required" && <span className='float-left text-danger'>{errors.email.message}</span>}
           <Input
             id='password'
             className='cinput'
@@ -60,8 +62,9 @@ const LoginForm = ({ }) => {
             aria-required="true"
             placeholder="Password"
             register={register}
+            showError={errors.password && errors.password.type === "required"}
+            errorMessage={errors?.password?.message}
           />
-          {errors.password && errors.password.type === "required" && <span className='float-left text-danger'>{errors.password.message}</span>}
           <a className='float-left' href="/forgot-password">Forgot password?</a>
         </div>
         <button className='mt-3 cbutton' style={{

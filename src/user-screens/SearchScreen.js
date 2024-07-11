@@ -16,6 +16,7 @@ function SearchScreen({ heading }) {
 
   }, [])
 
+  console.log(searchData)
   return (
     <div className="col-12">
       <div className="" style={{ padding: 10 }}>
@@ -42,7 +43,8 @@ function SearchScreen({ heading }) {
                         role="tabpanel"
                         aria-labelledby="one-tab">
                         {
-                          searchData.length > 0 ? searchData.docs.map((doc, index) => {
+
+                          searchData.docs.length > 0 ? searchData.docs.map((doc, index) => {
                             return <SearchItem key={`search_item_${index}`} {...doc} />
                           }) : <NoResultsFound />
                         }

@@ -37,8 +37,8 @@ const ProductCost = ({ productPrice, productDiscount, amountSaved, amountCurrenc
 
 const ProductDetailsList = () => {
   return (
-    <div className="offersList">
-      <h5>Available offers</h5>
+    <div className="offersList mt-3">
+      <h6>Available offers</h6>
       <ul className="offers">
         {Constants.OFFERLIST.map((offerItem, index) => (
           <OfferListItems key={`offer_${index}`} {...offerItem} />
@@ -46,7 +46,7 @@ const ProductDetailsList = () => {
         <div className="collapse hide" id="collapseExample">
           <div className="">
             <li className="">
-              <img alt="" src="assets/images/badge.png" />
+              <img alt="" src={BadgeIcon} />
               Light Laptop without Optical Disk Drive
             </li>
           </div>
@@ -123,7 +123,7 @@ const PaymentOptionsSection = () => {
 
 const Specifications = () => {
   return (
-    <ul className="list-group">
+    <ul className="list-group mt-3 mb-3">
       <li className="list-group-item ">
         <p
           style={{
@@ -195,15 +195,14 @@ const ProductFaq = () => {
         </div>
       </li>
       <li className="list-group-item">
-        <div className="pddv-15">
-          {' '}
-          Didn't get the right answer you were looking for ?
+        <div className="pddv-15 d-flex justify-content-between align-items-center">
+          <span>Didn't get the right answer you were looking for ?</span>
           <button
             data-toggle="modal"
             data-target="#productQuestModal"
             type="button"
             className="btn btn-light pull-right mt-15">
-            Post Your Question
+            <small>Post Your Question</small>
           </button>
         </div>
       </li>
@@ -247,7 +246,7 @@ const DeliverySection = () => {
             <a
               className="btn btn-link px-0 text-primary"
               data-toggle="modal"
-              data-target="#exampleModalLong"
+              data-target="#dlyModal"
             >
               View Details
             </a>

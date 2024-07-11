@@ -35,7 +35,7 @@ const reducer = (state, action) => {
 };
 
 export function AppDataProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, {...initialState});
 
   const getlatestAppData = async (params) => {
     try {

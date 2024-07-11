@@ -43,10 +43,9 @@ const RegisterForm = ({ toggleForm }) => {
               aria-invalid={errors.first_name ? "true" : "false"}
               aria-required="true"
               register={register}
+              showError={errors.first_name && errors.last_name.type === "required"}
+              errorMessage={errors?.first_name?.message}
             />
-            {
-              errors.first_name && errors.last_name.type === "required" && <span className='float-left text-danger'>{errors.first_name.message}</span>
-            }
           </div>
           <div className='col-6'>
             <Input
@@ -59,8 +58,9 @@ const RegisterForm = ({ toggleForm }) => {
               aria-invalid={errors.last_name ? "true" : "false"}
               aria-required="true"
               register={register}
+              showError={errors.last_name && errors.last_name.type === "required"}
+              errorMessage={errors?.last_name?.message}
             />
-            {errors.last_name && errors.last_name.type === "required" && <span className='float-left text-danger'>{errors.last_name.message}</span>}
           </div>
         </div>
         <Input
@@ -73,8 +73,9 @@ const RegisterForm = ({ toggleForm }) => {
           aria-invalid={errors.email ? "true" : "false"}
           aria-required="true"
           register={register}
+          showError={errors.password && errors.password.type === "required"}
+          errorMessage={errors?.password?.message}
         />
-        {errors.email && errors.email.type === "required" && <span className='float-left text-danger'>{errors.email.message}</span>}
         <Input
           id='password'
           className='cinput'
@@ -85,8 +86,9 @@ const RegisterForm = ({ toggleForm }) => {
           aria-required="true"
           placeholder="Password"
           register={register}
+          showError={errors.password && errors.password.type === "required"}
+          errorMessage={errors?.password?.message}
         />
-        {errors.password && errors.password.type === "required" && <span className='float-left text-danger'>{errors.password.message}</span>}
         <Input
           id='cpassword'
           className='cinput'
@@ -97,8 +99,9 @@ const RegisterForm = ({ toggleForm }) => {
           aria-required="true"
           placeholder="Confirm Password"
           register={register}
+          showError={errors.cpassword && errors.cpassword.type === "required"}
+          errorMessage={errors?.cpassword?.message}
         />
-        {errors.cpassword && errors.cpassword.type === "required" && <span className='float-left text-danger'>{errors.cpassword.message}</span>}
         <button className='mt-3 cbutton' id="sign-up" type='submit' style={{
           border: `1px solid ${theme.secondary}`,
           backgroundColor: theme.primary,

@@ -1,14 +1,17 @@
 import React from "react";
 
-const Input = ({ register, className, style, name, error, ...rest }) => {
+const Input = ({ register, className, style, name, error, showError, errorMessage, ...rest }) => {
   return (
-    <input
-      {...register(name)} 
-      {...rest}
-      className={`${className}${ error ? ' border border-danger' : ''}`}
-      autoComplete="off"
-      style={{ ...styles, style  }}
-    />
+    <>
+      <input
+        {...register(name)}
+        {...rest}
+        className={`${className}${error ? ' border border-danger' : ''}`}
+        autoComplete="off"
+        style={{ ...styles, style }}
+      />
+      {showError && <span className='float-left text-danger text-align-left'>{errorMessage}</span>}
+    </>
   );
 }
 

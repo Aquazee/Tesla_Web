@@ -31,16 +31,25 @@ export const AuthProvider = ({ children }) => {
     if (user) {
       payload.user = user
     }
-    if(token) {
+    if (token) {
       payload.token = token
     }
 
     dispatch({ type: 'setAppData', payload });
   }
 
-  const login = async (body) => {
+  const login = async (body, controller) => {
     try {
-      const response = await api.login(body);
+      const response = {
+        ok: true,
+        data: {
+          token: 'abcd',
+          user: {
+            name: 'John Doe'
+          }
+        }
+      };
+      // const response = await api.login(body, { signal: controller.signal });
       console.log(response);
       if (response.ok) {
         AppFunctions.setStoreData(Constants.STORAGEKEYS.TOKEN, response.data.token)
@@ -76,10 +85,10 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      dispatch({ type: 'setIsLoading', payload: true });
-      const { refresh } = AppFunctions.getStoredUserDetails().tokens.refresh;
-      await api.logout(refresh);
+      // const { refresh } = AppFunctions.getStoredUserDetails().tokens.refresh;
+      // await api.logout(refresh);
       AppFunctions.removeStoreData(Constants.STORAGEKEYS.USER)
+      AppFunctions.removeStoreData(Constants.STORAGEKEYS.TOKEN)
       dispatch({ type: 'reset' });
     } catch (err) {
       dispatch({ type: 'setError', payload: err.message });
@@ -170,7 +179,9 @@ const reducer = (state, { type, payload }) => {
         isLoading: false
       };
     case 'reset':
-      return initialState;
+      return {
+        ...initialState
+      };
     default:
       throw new Error();
   }
