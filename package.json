@@ -2,9 +2,20 @@
   "name": "tesla_web",
   "version": "1.2.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://aquazee.github.io/Tesla_Web",
   "engines": {
     "node": ">=16.16.0 <20.13.1"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js && gulp licenses",
+    "test": "node scripts/test.js --env=jsdom",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -82,15 +93,6 @@
     "workbox-webpack-plugin": "^6.4.1",
     "yup": "0.32.11"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js && gulp licenses",
-    "test": "node scripts/test.js --env=jsdom",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -102,7 +104,8 @@
     "typescript": "4.1.2"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gh-pages": "6.1.1",
+    "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8"
   },
   "overrides": {
