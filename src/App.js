@@ -4,7 +4,7 @@ import ErrorBoundary from './domain/ErrorBoundary/ErrorBoundary';
 import { useAuth } from './contexts';
 
 const App = ({ history, routes }) => {
-  const { token, isAdmin, role, admin, isLoggedIn, setLoggedIn, userPortal, IsAdminPortal, setAdminPortal } = useAuth();
+  const { token, isAdmin, admin, setAdminPortal } = useAuth();
 
   useEffect(() => {
    if(admin){

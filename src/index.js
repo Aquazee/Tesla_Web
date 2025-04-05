@@ -42,7 +42,7 @@ ReactDOM.render(
       <AppDataProvider>
         <NotificationDataProvider>
           <ProductProvider>
-            <BrowserRouter>
+            <BrowserRouter >
               <ThemeProvider value='light'>
                 <App />
               </ThemeProvider>

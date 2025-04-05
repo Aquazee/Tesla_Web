@@ -44,7 +44,7 @@ const SortItemComponent = ({ name, type, field, index, disabled }) => {
 
 const SortOptionList = () => {
   return Constants.SORTOPTIONS.map((sortItem, index) =>
-    <SortItemComponent {...sortItem} key={`SortItemList${index}`} disabled={index == 0} />
+    <SortItemComponent {...sortItem} key={`SortItemList${index}`} disabled={index === 0} />
   )
 }
 

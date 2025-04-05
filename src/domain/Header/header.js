@@ -11,6 +11,7 @@ import AccountDropDown from './AccountDropDown';
 import HoverableDropdown from '../../components/HoverableDropdown';
 import Text from 'components/Text';
 import { useTheme } from 'contexts/ThemeProvider';
+import { THEMES } from 'contexts/ThemeProvider';
 
 const myWidth = getWindowDimensions().width * (97 / 100);
 
@@ -102,6 +103,10 @@ const Header = () => {
   })
 
   const menuColor = theme.grey2;
+  const opacity = {
+    light: Constants.THEME_TYPES.LIGHT === selectedTheme ? 1 : 0.5,
+    dark: Constants.THEME_TYPES.DARK === selectedTheme ? 1 : 0.5
+  }
   return (
     <div className='row' >
       <nav className="mb-0 navbar navbar-expand-lg navbar-light container-fluid pr-15 pl-15 headerSpacing headerNavb" style={{backgroundColor: theme.primary}} >
@@ -137,10 +142,10 @@ const Header = () => {
             </li>
             <li className='nav-item'>
               <div className="btn-group btn-group-toggle theme-toggle ml-3" data-toggle="buttons">
-                <label className="btn btn-link active text-decoration-none" style={{backgroundColor: Constants.THEME_TYPES.LIGHT === selectedTheme ? theme.quaternary : '#eee', color: theme.primary   }}>
+                <label className="btn btn-link active text-decoration-none" style={{ backgroundColor: THEMES.light.primary, color: '#fff', opacity: opacity.light }}>
                   <input type="radio" name="options" id="option1" checked={Constants.THEME_TYPES.LIGHT === selectedTheme} onChange={() => changeTheme(Constants.THEME_TYPES.LIGHT)} /> <small><Text color={menuColor}>Light</Text></small>
                 </label>
-                <label className="btn btn-link text-decoration-none" style={{backgroundColor: Constants.THEME_TYPES.LIGHT === selectedTheme ?  '#eee' : theme.tertiary, color: theme.quaternary }}>
+                <label className="btn btn-link text-decoration-none" style={{ backgroundColor: THEMES.dark.primary, color: '#fff', opacity: opacity.dark }}>
                   <input type="radio" name="options" id="option3" checked={Constants.THEME_TYPES.DARK === selectedTheme} onChange={() => changeTheme(Constants.THEME_TYPES.DARK)} /> <small><Text color={menuColor}>Dark</Text></small>
                 </label>
               </div>

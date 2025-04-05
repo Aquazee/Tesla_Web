@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Router, Route, Routes, Switch, Link, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Loader from '../common-screens/Loader';
 import Account from '../domain/Account';

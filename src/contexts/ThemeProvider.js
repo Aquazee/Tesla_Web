@@ -34,7 +34,7 @@ const COMMON_DARK_THEME = {
   disabled: '#e3e6e8'
 }
 
-const themes = {
+export const THEMES = {
   light: {
     primary: '#ED9455',
     secondary: '#FFBB70',
@@ -59,15 +59,15 @@ const themes = {
 }
 
 export default function ThemeProvider(props) {
-  const [theme, setTheme] = useState(themes.light);
-  const [selectedTheme, setSelectedTheme] = useState(themes.light);
+  const [theme, setTheme] = useState(THEMES.light);
+  const [selectedTheme, setSelectedTheme] = useState(THEMES.light);
 
   function changeTheme(theme) {
     if (theme === Constants.THEME_TYPES.LIGHT) {
-      setTheme(themes.light);
+      setTheme(THEMES.light);
       setSelectedTheme(Constants.THEME_TYPES.LIGHT)
     } else {
-      setTheme(themes.dark);
+      setTheme(THEMES.dark);
       setSelectedTheme(Constants.THEME_TYPES.DARK)
     }
   }

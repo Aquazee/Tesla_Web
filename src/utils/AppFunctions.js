@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import Message from '../utils/Message';
 import Constants from './Constants';
 
