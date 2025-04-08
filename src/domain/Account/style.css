@@ -44,6 +44,8 @@ body {
   border-color: #eee;
   font-weight: 500;
   color: #969696;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .Account-sublist a {
