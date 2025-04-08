@@ -1,0 +1,3 @@
+.radio-group-gender > div > .form-check:first-child, .radio-group-address-type > div > .form-check:first-child {
+    padding-left: 0px;
+}
