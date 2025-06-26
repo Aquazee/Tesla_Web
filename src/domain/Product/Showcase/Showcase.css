@@ -49,9 +49,14 @@
 
 .shop-button {
   height: 47px;
-  border-radius: 0px !important;
+  border-radius: 2px !important;
   text-transform: uppercase;
   color: #fff !important ;
+  font-size: 13px;
+}
+
+.shop-button:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24),0 12px 25px 0 rgba(0,0,0,0.19);
 }
 
 #ShowcaseCont {
@@ -62,26 +67,4 @@
 /* Zoom Image css */
 * {
   box-sizing: border-box;
-}
-
-.img-zoom-container {
-  position: relative;
-}
-
-.img-zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  /*set the size of the lens:*/
-  width: 40px;
-  height: 40px;
-}
-
-.img-zoom-result {
-  border: 1px solid #d4d4d4;
-  width: 400px;
-  height: 425px;
-  position: absolute;
-  right: -400px;
-  top: 0;
-  z-index: 1;
 }
