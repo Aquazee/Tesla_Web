@@ -1,5 +1,5 @@
-.breadcrumb-item+.breadcrumb-item::before {
-  content: '>';
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
 }
 
 .breadcrumb {
@@ -158,6 +158,8 @@
 }
 
 .image_selected {
+  padding: 80px 0px;
+  height: 450px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -166,13 +168,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: calc(100% + 15px);
-  /* height: 525px; */
-  -webkit-transform: translateX(-15px);
-  -moz-transform: translateX(-15px);
-  -ms-transform: translateX(-15px);
-  -o-transform: translateX(-15px);
-  transform: translateX(-15px);
   border: solid 1px #e8e8e8;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -222,7 +217,7 @@
 }
 
 .row-underline {
-  content: '';
+  content: "";
   display: block;
   border-bottom: 2px solid #3798db;
   margin: 0px 0px;
@@ -297,7 +292,7 @@
 }
 
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900");
 
 * {
   margin: 0;
@@ -308,7 +303,7 @@
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: 400;
   background: #ffffff;
@@ -451,12 +446,24 @@ ul {
   padding-left: 6px;
 }
 
-.dly_btn {}
+.dly_btn {
+}
 
 .dly_label {
   padding: 6px 0px;
   color: #878787 !important;
   font-size: 14px;
+  align-content: baseline;
+}
+
+.specs_val {
+  color: #333;
+  padding: 5px 0;
+}
+
+.specs-header {
+  font-size: 18px;
+  white-space: nowrap;
 }
 
 .groupinput {
@@ -475,12 +482,12 @@ ul {
 }
 
 .li-disc {
-  list-style: disc;
+  /* list-style: disc; */
   color: #333;
 }
 
 .li-disc::before {
-  content: '\2022';
+  content: "\2022";
   color: grey;
   font-weight: bold;
   display: inline-block;
@@ -507,12 +514,16 @@ ul {
   color: #a0a0a0;
 }
 
-.likesection>span:last-child {
-  margin-left: 15px;
-  font-size: 16px;
+.light-grey {
+  color: #9c9a9a;
 }
 
-.likesection>span:first-child {
+.likesection > span:last-child {
+  margin-left: 15px;
+  font-size: 16px !important;
+}
+
+.likesection > span:first-child {
   margin-right: 15px;
 }
 
@@ -526,4 +537,13 @@ ul {
   border-bottom: 1px solid #eee;
   -webkit-appearance: none;
   margin-left: 10px;
+}
+
+.report-abuse {
+  font-size: 16px;
+}
+
+.button {
+  border-radius: 4px;
+  
 }
