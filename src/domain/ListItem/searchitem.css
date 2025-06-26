@@ -11,9 +11,15 @@
 .prt_compare {
   bottom: 0;
   position: absolute;
+  padding-left: 0;
 }
 
 .prt_heart {
+  top: 0;
   right: 0;
   position: absolute;
+}
+
+.search-item-img-cont {
+  min-height: 155px;
 }
