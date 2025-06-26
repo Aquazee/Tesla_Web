@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { Constants } from '../../utils';
-import './breadcrumb.css';
-import Crumb from './Crumb';
+import React, { useEffect } from "react";
+import { Constants } from "../../utils";
+import "./breadcrumb.css";
+import Crumb from "./Crumb";
 
-const BreadCrumb = () => {
+const BreadCrumb = ({ className = "" }) => {
   return (
     <div>
-      <nav className="pddh-15" style={{ marginTop: 15 }}>
+      <nav className={`pddh-15 px-0${className}`}>
         <ol className="breadcrumb">
           {Constants.BREADCRUMBS.map((crumb, index) => (
             <Crumb key={`crumb_${index}`} {...crumb} />
@@ -15,7 +15,7 @@ const BreadCrumb = () => {
       </nav>
     </div>
   );
-}
+};
 
 BreadCrumb.propTypes = {};
 
