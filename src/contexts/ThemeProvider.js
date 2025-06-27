@@ -60,7 +60,7 @@ export const THEMES = {
 
 export default function ThemeProvider(props) {
   const [theme, setTheme] = useState(THEMES.light);
-  const [selectedTheme, setSelectedTheme] = useState(THEMES.light);
+  const [selectedTheme, setSelectedTheme] = useState(Constants.THEME_TYPES.LIGHT);
 
   function changeTheme(theme) {
     if (theme === Constants.THEME_TYPES.LIGHT) {
