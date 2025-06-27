@@ -208,11 +208,15 @@ export const PRODUCT_LIST = [
       selling_price: 232999.0,
       discount: 5,
     },
+    created_date: "2025-06-27T15:43:34.590Z"
   },
   {
     custom_label:
       "Apple MacBook AIR Apple M2 - (8 GB/256 GB SSD/Mac OS Monterey) MLY33HN/A  (13.6 Inch, Midnight, 1.24 Kg)",
     FEATURES,
+    image_link: "",
+    mobile_link: "",
+    additional_image_link: "",
     review_and_ratings: {
       rating: 5,
       rated_customer_count: 340,
@@ -225,6 +229,7 @@ export const PRODUCT_LIST = [
       selling_price: 70990.0,
       discount: 5,
     },
+    created_date: "2024-06-27T15:43:34.590Z"
   },
   {
     custom_label:
@@ -250,5 +255,6 @@ export const PRODUCT_LIST = [
       selling_price: 154999.0,
       discount: 5,
     },
+    created_date: "2020-06-27T15:43:34.590Z"
   },
 ];

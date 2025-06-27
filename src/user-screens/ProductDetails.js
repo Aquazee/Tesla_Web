@@ -13,7 +13,6 @@ const {
   DeliverySection,
   PaymentOptionsSection,
   ProductCost,
-  ProductDetailedSpecification,
   ProductDetailsList,
   ProductFaq,
   ProductHighLights,
@@ -69,9 +68,9 @@ function ProductDetails({route}) {
             <div className="col-7 order-lg-7 order-2">
               <div className="product_description">
                 <BreadCrumb />
-                <ProductName name="Acer Aspire 3 Celeron Dual Core - (2 GB/500 GB HDD/Windows 10 Home) A315-33 Laptop (15.6 inch, Black, 2.1 kg)" />
+                <ProductName name="Apple MacBook Air Apple M4 - (24 GB/512 GB SSD/macOS Sequoia) MC654HN/A  (13.6 inch, Silver, 1.24 kg)" />
                 <ProductRating rating={4} reviewCounts={45} ratingCounts={100} />
-                <ProductCost amountSaved={2000} productDiscount={1500} productPrice={40000} />
+                <ProductCost amountSaved={4000} productDiscount={1500} productPrice={135990} />
                 <ProductDetailsList />
                 <hr className="singleline" />
                 <div>
@@ -89,7 +88,6 @@ function ProductDetails({route}) {
             </div>
           </div>
           <ComboOffers />
-          <ProductDetailedSpecification />
         </div>
       </div>
       <DeliveryModal />

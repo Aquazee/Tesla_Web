@@ -1,33 +1,24 @@
-import React, { useContext, createContext, useReducer } from 'react';
-import API from '../api/api';
+import React, { useContext, createContext, useReducer } from "react";
+import API from "../api/api";
 
-import { useApi } from './Api';
-import { AppFunctions, Constants } from '../utils';
-
-const SearchItemData = {
-  custom_label: 'test',
-  review_and_ratings: {rating: 30, rated_customer_count: 20, review_count: 20},
-  cost: {
-    currency: '$', mrp: 50.0, gross_amount: 52.1, selling_price: 40.0, discount: 20
-  }
-
-}
+import { useApi } from "./Api";
+import { AppFunctions, Constants, OfflineHelper } from "../utils";
+import { PRODUCT_LIST } from "utils/Data";
 
 const ProductContext = React.createContext();
 export const useProduct = (props) => useContext(ProductContext);
 
 const appActions = {
-  MAKE_REQUEST: 'MAKE_REQUEST',
-  SET_PRODUCT_SEARCH_DATA: 'SET_PRODUCT_SEARCH_DATA',
-  SET_ERROR: 'SET_ERROR'
+  MAKE_REQUEST: "MAKE_REQUEST",
+  SET_PRODUCT_SEARCH_DATA: "SET_PRODUCT_SEARCH_DATA",
+  SET_ERROR: "SET_ERROR",
 };
-
 
 const initialState = {
   isLoading: true,
   isSuccess: false,
   isError: false,
-  searchData: {docs: [SearchItemData]}
+  searchData: { docs: PRODUCT_LIST },
 };
 
 export const ProductProvider = ({ children }) => {
@@ -41,11 +32,26 @@ export const ProductProvider = ({ children }) => {
       dispatch({
         type: appActions.SET_PRODUCT_SEARCH_DATA,
         payload: {
-          data
-        }
+          data,
+        },
       });
     } catch (error) {
-      console.log(error)
+      const tempError = new Error(error);
+      if (tempError.message == "Error: Network Error") {
+        console.log("Please check your network connnection.");
+        const updatedData = OfflineHelper.searchApi(params, PRODUCT_LIST)
+        dispatch({
+          type: appActions.SET_PRODUCT_SEARCH_DATA,
+          payload: {
+            data: {
+              docs: updatedData,
+            },
+          },
+        });
+      } else {
+      }
+      console.log(tempError.name);
+      console.log(tempError.message);
     }
   };
 
@@ -53,32 +59,32 @@ export const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         getProductSearchData,
-        ...state
+        ...state,
       }}
     >
       {children}
     </ProductContext.Provider>
   );
-}
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
     case appActions.MAKE_REQUEST:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case appActions.SET_PRODUCT_SEARCH_DATA:
       return {
         ...state,
         loading: false,
-        searchData: action.payload.data
+        searchData: action.payload.data,
       };
     case appActions.SET_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     default:
       return state;
