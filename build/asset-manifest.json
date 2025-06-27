@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Tesla_Web/static/css/main.4102e9a9.css",
+    "main.js": "/Tesla_Web/static/js/main.1fda1709.js",
+    "static/js/496.7db5d8ff.chunk.js": "/Tesla_Web/static/js/496.7db5d8ff.chunk.js",
+    "static/media/samsung.jpg": "/Tesla_Web/static/media/samsung.ee1355fb101b33f59f35.jpg",
+    "static/media/fa-solid-900.ttf": "/Tesla_Web/static/media/fa-solid-900.b48ad290d0335879a92b.ttf",
+    "static/media/fa-brands-400.ttf": "/Tesla_Web/static/media/fa-brands-400.f9ee61fab3c11e2f3ed3.ttf",
+    "static/media/fa-solid-900.woff2": "/Tesla_Web/static/media/fa-solid-900.66104b766c3d0462b3c5.woff2",
+    "static/media/fa-brands-400.woff2": "/Tesla_Web/static/media/fa-brands-400.e1a247a5ef41e1975742.woff2",
+    "static/media/sofaset.jpg": "/Tesla_Web/static/media/sofaset.53c92c6b1d1196dbec35.jpg",
+    "static/media/mixer.jpg": "/Tesla_Web/static/media/mixer.edc3fa443201964bf762.jpg",
+    "static/media/clothes.jpg": "/Tesla_Web/static/media/clothes.fa63835357095cd20be0.jpg",
+    "static/media/fa-regular-400.ttf": "/Tesla_Web/static/media/fa-regular-400.abf801b7acb6705a15ad.ttf",
+    "static/media/notebook.jpg": "/Tesla_Web/static/media/notebook.910c619461b9ec460b4f.jpg",
+    "static/media/prestige-sandwich-toster.jpg": "/Tesla_Web/static/media/prestige-sandwich-toster.d479916cb61c1ad99a29.jpg",
+    "static/media/cooker.jpeg": "/Tesla_Web/static/media/cooker.db7b0d82ef7dfe1d4081.jpeg",
+    "static/media/fa-regular-400.woff2": "/Tesla_Web/static/media/fa-regular-400.639d2000c1ece92eaec8.woff2",
+    "static/media/no-data-found.jpg": "/Tesla_Web/static/media/no-data-found.58ae6f83857af0a12a8f.jpg",
+    "static/media/fa-v4compatibility.ttf": "/Tesla_Web/static/media/fa-v4compatibility.f601162ae669f88823a3.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Tesla_Web/static/media/fa-v4compatibility.745989aab0d69cab7e70.woff2",
+    "index.html": "/Tesla_Web/index.html",
+    "main.4102e9a9.css.map": "/Tesla_Web/static/css/main.4102e9a9.css.map",
+    "main.1fda1709.js.map": "/Tesla_Web/static/js/main.1fda1709.js.map",
+    "496.7db5d8ff.chunk.js.map": "/Tesla_Web/static/js/496.7db5d8ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4102e9a9.css",
+    "static/js/main.1fda1709.js"
+  ]
+}
