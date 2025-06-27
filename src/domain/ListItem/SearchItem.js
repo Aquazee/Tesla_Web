@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AppFunctions } from "utils";
+import { AppFunctions, Urls } from "utils";
 import "./searchitem.css";
 
 const SearchItem = ({ path = "/product/mac", ...props }) => {
@@ -26,11 +26,7 @@ const SearchItem = ({ path = "/product/mac", ...props }) => {
       onClick={onAction}
     >
       <div className="col-2 position-relative search-item-img-cont py-4">
-        <img
-          src="https://rukminim2.flixcart.com/image/416/416/xif0q/computer/g/m/l/-original-imahayjpk2hvhayw.jpeg"
-          alt=""
-          width="100%"
-        />
+        <img src={props.image_link !== '' ? props.image_link : Urls.URLS.NO_IMAGE_FOUND} alt={props.custom_label} width="100%" />
         <AddToWishlist />
         <AddToCompare />
       </div>
