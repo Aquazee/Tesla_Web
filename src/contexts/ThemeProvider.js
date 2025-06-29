@@ -59,7 +59,8 @@ export const THEMES = {
 };
 
 export default function ThemeProvider(props) {
-  const [theme, setTheme] = useState(THEMES.light);
+  const themeName = AppFunctions.getStoreData(Constants.STORAGEKEYS.THEME) || Constants.THEME_TYPES.LIGHT
+  const [theme, setTheme] = useState(themeName);
   const [selectedTheme, setSelectedTheme] = useState(
     Constants.THEME_TYPES.LIGHT
   );
@@ -83,7 +84,6 @@ export default function ThemeProvider(props) {
   }
 
   const loadTheme = () => {
-    const themeName = AppFunctions.getStoreData(Constants.STORAGEKEYS.THEME) || Constants.THEME_TYPES.LIGHT;
     setTheme(THEMES[themeName]);
     setSelectedTheme(themeName);
   };
