@@ -1,5 +1,7 @@
 import moment from "moment";
 import { getURLParams } from "./Helper";
+import AppFunctions from "./AppFunctions";
+import Constants from "./Constants";
 
 const searchApi = (params, PRODUCT_LIST) => {
   const sortField = params.get("sort_field");
@@ -18,4 +20,11 @@ const searchApi = (params, PRODUCT_LIST) => {
         break;
   }
 };
-export default { searchApi };
+
+const registerApi = (body) => {
+  console.log(body)
+  delete body['password']
+  AppFunctions.setStoreData(Constants.STORAGEKEYS.USER, body)
+  window.location.href = "/"
+};
+export default { searchApi, registerApi };
