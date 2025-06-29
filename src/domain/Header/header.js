@@ -148,7 +148,7 @@ const Header = () => {
         >
           <ul className="navbar-nav me-auto float-end">
             <li className="nav-item">
-              <AccountDropDown isLoggedIn={isLoggedIn} name={user?.name} />
+              <AccountDropDown isLoggedIn={isLoggedIn} name={user?.first_name} />
             </li>
             {/* <Dropdown label={'more'} onSelect={()=>{}} options={['Notification Preferences', 'Sell on Triangle', '24/7 Customer Care', 'Advertise', 'Download App']}/> */}
             <li className="nav-item dropdown header-more ml-2">

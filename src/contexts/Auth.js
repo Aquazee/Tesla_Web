@@ -2,7 +2,8 @@ import React, { useEffect, useContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
 import { useApi } from './Api';
-import { AppFunctions, Constants } from '../utils';
+import { AppFunctions, Constants, OfflineHelper } from '../utils';
+import { getUserToken } from 'utils/Helper';
 
 const AuthContext = React.createContext();
 
@@ -43,10 +44,7 @@ export const AuthProvider = ({ children }) => {
       const response = {
         ok: true,
         data: {
-          token: 'abcd',
-          user: {
-            name: 'John Doe'
-          }
+          token: getUserToken()
         }
       };
       // const response = await api.login(body, { signal: controller.signal });
@@ -67,6 +65,10 @@ export const AuthProvider = ({ children }) => {
       const response = await api.registerUser(body);
       console.log(response);
       if (!response.ok) {
+        onOAuthFailure(response)
+        OfflineHelper.registerApi(body)
+        const token = getUserToken()
+        setLoggedIn(token)
       }
       return response;
     } catch (err) {
