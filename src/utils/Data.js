@@ -208,7 +208,7 @@ export const PRODUCT_LIST = [
       selling_price: 232999.0,
       discount: 5,
     },
-    created_date: "2025-06-27T15:43:34.590Z"
+    created_date: "2025-06-27T15:43:34.590Z",
   },
   {
     custom_label:
@@ -229,7 +229,7 @@ export const PRODUCT_LIST = [
       selling_price: 70990.0,
       discount: 5,
     },
-    created_date: "2024-06-27T15:43:34.590Z"
+    created_date: "2024-06-27T15:43:34.590Z",
   },
   {
     custom_label:
@@ -255,6 +255,6 @@ export const PRODUCT_LIST = [
       selling_price: 154999.0,
       discount: 5,
     },
-    created_date: "2020-06-27T15:43:34.590Z"
+    created_date: "2020-06-27T15:43:34.590Z",
   },
 ];
