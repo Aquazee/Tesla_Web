@@ -4,6 +4,8 @@ import './components.css'
 
 const InputRadioGroup = ({
   label,
+  name,
+  register,
   options = [],
   className = ""
 }) => {
@@ -12,7 +14,7 @@ const InputRadioGroup = ({
       <label>{label}</label>
       <div className="d-flex">
         {options.map((option, index) => (
-          <InputRadio key={option.label + index.toString()} {...option} />
+          <InputRadio key={option.label + index.toString()} {...option} name={name} register={register}/>
         ))}
       </div>
     </div>

@@ -260,7 +260,7 @@ const Constants = {
     USER: "user",
     TOKEN: "token",
     TEMPGRIDITEM: "temp_grid_item",
-    THEME: "theme"
+    THEME: "theme",
   },
   SLIDER_IMGS: [
     "https://rukminim1.flixcart.com/flap/1688/280/image/fd1aae7fd04875b0.jpg?q=50",
@@ -342,7 +342,11 @@ const Constants = {
       label: "I'd rather not specify",
       selected: false,
     },
-  ]
+  ],
+  ADDRESS_TYPE: [
+    { label: "Home", selected: false },
+    { label: "Work", selected: false },
+  ],
 };
 
 export default Constants;

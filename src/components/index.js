@@ -5,6 +5,7 @@ export { default as Grid } from './Grid';
 export { default as Sidebar } from './Sidebar';
 export { default as Input } from './Input';
 export { default as InputBox } from './InputBox';
+export { default as InputRadioGroup } from './InputRadioGroup';
 export { default as FieldLabel } from './FieldLabel';
 export { default as RequiredField } from './RequiredField';
 export { default as ErrorText } from './ErrorText';

@@ -1,9 +1,10 @@
-import React from 'react';
-import { Input, FieldLabel, ErrorText } from '../components';
+import React from "react";
+import { Input, FieldLabel, ErrorText } from "../components";
 
 const InputBox = React.forwardRef(
   (
     {
+      register,
       className,
       id,
       required,
@@ -20,14 +21,22 @@ const InputBox = React.forwardRef(
       <div className={`mt-3 mb-3 has-validated ${className}`}>
         <FieldLabel id={id} isRequired={required} label={label} />
         <Input
-          className={`form-control ${validFeedbackValue ? ' is-invalid' : 'border'}`}
-          type={type === 'password' && show ? 'text' : type}
+          register={register}
+          className={`form-control ${
+            validFeedbackValue ? " is-invalid" : "border"
+          }`}
+          type={type === "password" && show ? "text" : type}
           id={id}
           label={label}
           name={name}
+          aria-invalid={validFeedbackValue !== "" ? "true" : "false"}
+          aria-required={required}
+          required={required}
           {...rest}
         />
-        {Boolean(validFeedbackValue) && <ErrorText>{validFeedbackValue}</ErrorText>}
+        {Boolean(validFeedbackValue) && (
+          <ErrorText>{validFeedbackValue}</ErrorText>
+        )}
       </div>
     );
   }
@@ -39,6 +48,6 @@ const styles = {
   smallText: {
     fontSize: 10,
     fontWeight: 300,
-    color: '#000'
-  }
+    color: "#000",
+  },
 };

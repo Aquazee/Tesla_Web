@@ -6,9 +6,10 @@ import { AppFunctions } from '../utils';
 import BillingDetailsForm from 'domain/Checkout/BillingDetailsForm';
 import PaymentDetailsForm from 'domain/Checkout/PaymentDetailsForm';
 import RedeemForm from 'domain/Checkout/RedeemForm';
+import { useTheme } from 'contexts/ThemeProvider';
 
 function Checkout({ route }) {
-
+  const theme = useTheme()
   useEffect(() => {
     pageLoad();
   })
@@ -46,7 +47,7 @@ function Checkout({ route }) {
           <ContactForm />
           <BillingDetailsForm />
           <PaymentDetailsForm />
-          <button className="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+          <button className="btn btn-lg btn-block" style={{color: theme.primary}} type="submit">Continue to checkout</button>
         </div>
       </div>
     </div>

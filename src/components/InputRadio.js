@@ -1,16 +1,17 @@
 import React from "react";
 
-const InputRadio = ({ label, selected }) => {
+const InputRadio = ({ label, name, selected, value, register }) => {
   return (
     <div className="form-check">
       <input
         className="form-check-input"
         type="radio"
-        name="exampleRadios"
+        name={name}
+        {...register(name)}
         id={label.toLowerCase()}
-        value="option2"
-        checked={selected}
-        onChange={() => console.log('clicked ' + label)}
+        value={value}
+        // checked={value==}
+        // onChange={() => console.log('clicked ' + label)}
       />
       <label className="form-check-label" htmlFor={label.toLowerCase()}>
         {label}
