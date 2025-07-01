@@ -3,7 +3,7 @@ import Button from "components/Button";
 import constants from "../../utils/Constants";
 import React from "react";
 import { useForm, useWatch } from "react-hook-form";
-import personalInformationSchema from "../../personal-information.schema";
+import personalInformationSchema from "../../schema/personal-information.schema";
 import UseYupValidationResolver from "utils/UseYupValidationResolver";
 
 const PersonalInformation = () => {
@@ -114,7 +114,7 @@ const PersonalInformation = () => {
           />
         </div>
         {/* <Button className="btn-primary mt-2" value="Save" type="submit"/> */}
-        <input type="submit" />
+        <Button type="submit" className="btn-outline-warning">Save</Button>
       </div>
     </form>
   );

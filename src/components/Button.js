@@ -1,26 +1,37 @@
 import React from "react";
+import { useTheme } from "contexts/ThemeProvider";
 
-const Button = ({ value, className, type = "button", style, ...rest }) => {
-  let tempStyle = {};
-  if (className === "btn-link") {
-    tempStyle = styles.link;
-  }
+const Button = ({
+  value,
+  className,
+  type = "button",
+  style,
+  children,
+  ...rest
+}) => {
+  const { theme } = useTheme();
+ 
   return (
     <button
-      {...rest}
       aria-label={value}
       type={type}
       className={`btn ${className}`}
-      autoComplete="off"
-      style={{ ...styles, style }}
+      style={{
+        color: theme.primary,
+        borderColor: theme.primary,
+      }}
+      {...rest}
     >
-      <span>{value}</span>
+      {children}
     </button>
   );
 };
 
 const styles = {
   link: {},
+  outlined: {
+    padding: "8px 20px",
+  }
 };
 
 export default Button;
