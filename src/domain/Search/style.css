@@ -2,12 +2,11 @@
     margin : 10px 6px 0px 0px;
 } */
 
-.form-check > label {
+/* .form-check > label {
   font-size: 14px;
-  margin-left: 1.5em;
   font-weight: 400;
   vertical-align: middle;
-}
+} */
 
 .productList {
   background-color: #fff;
@@ -67,6 +66,3 @@ body {
   padding-bottom: 0;
 }
 
-.form-check-input {
-  margin-left: 0 !important;
-}

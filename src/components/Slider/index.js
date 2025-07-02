@@ -2,12 +2,12 @@ import React from 'react';
 
 function Slider() {
   return (
-    <div id="carouselExampleControls col-12" className="carousel slide w-100" data-ride="carousel">
+    <div id="carouselExampleControls col-12" className="carousel slide w-100" data-bs-ride="carousel">
       <ol className="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active" />
-        <li data-target="#carouselExampleIndicators" data-slide-to="1" />
-        <li data-target="#carouselExampleIndicators" data-slide-to="2" />
-        <li data-target="#carouselExampleIndicators" data-slide-to="3" />
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" />
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" />
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" />
+        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" />
       </ol>
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -51,7 +51,8 @@ function Slider() {
         className="carousel-control-prev"
         href="#carouselExampleControls"
         role="button"
-        data-slide="prev"
+        data-bs-slide="prev"
+        data-bs-target="#carouselExampleIndicators"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true" />
         <span className="sr-only">Previous</span>
@@ -60,7 +61,8 @@ function Slider() {
         className="carousel-control-next"
         href="#carouselExampleControls"
         role="button"
-        data-slide="next"
+        data-bs-slide="next"
+        data-bs-target="#carouselExampleIndicators"
       >
         <span className="carousel-control-next-icon" aria-hidden="true" />
         <span className="sr-only">Next</span>

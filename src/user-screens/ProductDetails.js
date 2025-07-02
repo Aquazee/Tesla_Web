@@ -62,10 +62,10 @@ function ProductDetails({route}) {
       <div className="single_product">
         <div className="container" style={{ backgroundColor: '#fff', padding: 11 }}>
           <div className="row">
-            <div className="col-5 order-lg-5 order-1">
+            <div className="col-5 order-lg-7 order-2">
               <Showcase />
             </div>
-            <div className="col-7 order-lg-7 order-2">
+            <div className="col-7 order-lg-5 order-1">
               <div className="product_description">
                 <BreadCrumb />
                 <ProductName name="Apple MacBook Air Apple M4 - (24 GB/512 GB SSD/macOS Sequoia) MC654HN/A  (13.6 inch, Silver, 1.24 kg)" />

@@ -22,9 +22,9 @@ function SearchScreen({}) {
             <Filters />
           </div>
           <div className="col-9 col-md-8 productList" style={{ padding: 0 }}>
-            <BreadCrumb className="pl-3" />
+            <BreadCrumb className="ps-3" />
             <div>
-              <h5 className="pt-1 pl-3">
+              <h5 className="pt-1 ps-3">
                 <small className="">
                   Showing 1 – 8 products of 8 products results for "
                   {getURLParams("search")}"

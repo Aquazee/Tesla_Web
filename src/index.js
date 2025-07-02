@@ -1,9 +1,9 @@
 import 'popper.js/dist/popper.js'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import * as bootstrap from 'bootstrap';
+
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';

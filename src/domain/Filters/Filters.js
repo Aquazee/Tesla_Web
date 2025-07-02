@@ -25,7 +25,7 @@ const Filters = () => {
   };
   return (
     <div id="filter" className="filter_Sect">
-      <ul className="">
+      <ul className="ps-0">
         <li className="filter_title pddh-15 mt-0">Filters</li>
         <li
           className="text-uppercase "
@@ -39,10 +39,10 @@ const Filters = () => {
         </li>
         <div className="collapse" id="ProcessorBrand">
           {ProcessorBrand.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
-                className="form-check-input"
+                className="form-check-input me-1"
                 id={`ProcessorBrand${i}`}
                 value={i}
               />
@@ -104,7 +104,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Processor">
           {Processor.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -129,7 +129,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Brand">
           {Brand.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -154,7 +154,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Os">
           {Os.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -179,7 +179,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Ram">
           {Ram.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -204,7 +204,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Graphics">
           {Graphics.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -229,7 +229,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Type">
           {Type.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -254,7 +254,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="Offers">
           {Offers.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -279,7 +279,7 @@ const Filters = () => {
         </li>
         <div className="collapse font-weight-normal" id="CustomerRatings">
           {CustomerRatings.map((i) => (
-            <div key={i} className="form-check">
+            <div key={i} className="form-check ms-3">
               <input
                 type="checkbox"
                 className="form-check-input"

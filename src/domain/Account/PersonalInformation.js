@@ -24,7 +24,9 @@ const PersonalInformation = () => {
     }
   };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log('Personal info: ', data);
+  }
 
   const onEditClick = () => {};
 
@@ -39,7 +41,7 @@ const PersonalInformation = () => {
         aria-labelledby="profile_information-tab"
       >
         <div className="section-header d-flex">
-          <h6 className="mb-4 mr-3 cursor-pointer">Personal Information</h6>
+          <h6 className="mb-4 me-3 cursor-pointer">Personal Information</h6>
           <a className="">Edit</a>
         </div>
         <div className="row justify-content-between">

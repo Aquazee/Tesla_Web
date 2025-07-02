@@ -168,14 +168,14 @@ function Grid({
   const getPagination = () => {
     const pagination = [];
     // if (currentPage > 1) {
-    //   pagination.push(<Button className='pr-3 pl-3 me-4' disabled={currentPage === totalPagesIndex + 1} key={totalPagesIndex + 1}>
+    //   pagination.push(<Button className='pr-3 ps-3 me-4' disabled={currentPage === totalPagesIndex + 1} key={totalPagesIndex + 1}>
     //     {(totalPagesIndex + 1)}
     //   </Button>
     // }
     for (let totalPagesIndex = 0; totalPagesIndex < totalPages; totalPagesIndex++) {
       pagination.push(
         <Button
-          className="pr-3 pl-3 me-4"
+          className="pr-3 ps-3 me-4"
           disabled={currentPage === totalPagesIndex + 1}
           key={totalPagesIndex + 1}
           onClick={() => updateCurrentPage(totalPagesIndex + 1)}
@@ -205,7 +205,7 @@ function Grid({
           </Col>
           <Col className="pr-md-1 " md="2">
             <Button className="btn-simple" color="primary" onClick={download}>
-              <i className="tim-icons icon-cloud-download-93 mr-2" />
+              <i className="tim-icons icon-cloud-download-93 me-2" />
               Download
             </Button>
           </Col>
@@ -337,7 +337,7 @@ function Action({ onPress, rowData, name }) {
   };
   return (
     <Button
-      className="btn-icon mr-2"
+      className="btn-icon me-2"
       color={name === 'delete' ? 'danger' : name === 'view' ? 'light' : 'primary'}
       onClick={(event) => {
         event.preventDefault();

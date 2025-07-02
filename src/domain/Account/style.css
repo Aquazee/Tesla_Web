@@ -1,9 +1,6 @@
-.form-check > label {
-  font-size: 14px;
-  margin-left: 1.5em;
-  font-weight: 400;
-  vertical-align: middle;
-}
+/* .form-check {
+  padding-left: 2.5em;
+} */
 
 .productList {
   background-color: #fff;

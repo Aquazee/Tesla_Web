@@ -39,7 +39,7 @@ const UserProfile = () => {
                       <Input defaultValue="michael23" placeholder="Username" type="text" />
                     </FormGroup>
                   </Col>
-                  <Col className="pl-md-1" md="4">
+                  <Col className="ps-md-1" md="4">
                     <FormGroup>
                       <label htmlFor="exampleInputEmail1">Email address</label>
                       <Input placeholder="mike@email.com" type="email" />
@@ -53,7 +53,7 @@ const UserProfile = () => {
                       <Input defaultValue="Mike" placeholder="Company" type="text" />
                     </FormGroup>
                   </Col>
-                  <Col className="pl-md-1" md="6">
+                  <Col className="ps-md-1" md="6">
                     <FormGroup>
                       <label>Last Name</label>
                       <Input defaultValue="Andrew" placeholder="Last Name" type="text" />
@@ -85,7 +85,7 @@ const UserProfile = () => {
                       <Input defaultValue="Andrew" placeholder="Country" type="text" />
                     </FormGroup>
                   </Col>
-                  <Col className="pl-md-1" md="4">
+                  <Col className="ps-md-1" md="4">
                     <FormGroup>
                       <label>Postal Code</label>
                       <Input placeholder="ZIP Code" type="number" />

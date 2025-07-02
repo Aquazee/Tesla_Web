@@ -30,10 +30,10 @@ function ModalExample(props) {
                   <td className="text-center">{o.name}</td>
                   <td className="text-center">{o.is_active}</td>
                   <td className="text-center">
-                    <Button className="btn-icon mr-2" color="primary">
+                    <Button className="btn-icon me-2" color="primary">
                       <i className="tim-icons icon-pencil" title="Edit" />
                     </Button>
-                    <Button className="btn-icon mr-2" color="danger">
+                    <Button className="btn-icon me-2" color="danger">
                       <i className="tim-icons icon-trash-simple" title="Edit" />
                     </Button>
                   </td>

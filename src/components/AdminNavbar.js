@@ -88,7 +88,7 @@ function AdminNavbar(props) {
             <span className="navbar-toggler-bar navbar-kebab" />
           </NavbarToggler>
           <Collapse navbar isOpen={collapseOpen}>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ms-auto" navbar>
               <InputGroup className="search-bar">
                 <Button color="link" onClick={toggleModalSearch}>
                   <i className="tim-icons icon-zoom-split" />

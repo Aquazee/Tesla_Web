@@ -35,7 +35,7 @@ const HoverableDropdown = ({
               >
                 <Text color={theme.grey3}>
                   {option.icon ? (
-                    <i className={`${option.icon} mr-2`} style={{color: theme.primary}}></i>
+                    <i className={`${option.icon} me-2`} style={{color: theme.primary}}></i>
                   ) : null}
                   {option.name}
                 </Text>

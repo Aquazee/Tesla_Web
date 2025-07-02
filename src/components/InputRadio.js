@@ -9,11 +9,11 @@ const InputRadio = ({ label, name, selected, value, register }) => {
         name={name}
         {...register(name)}
         id={label.toLowerCase()}
-        value={value}
+        value={label}
         // checked={value==}
         // onChange={() => console.log('clicked ' + label)}
       />
-      <label className="form-check-label" htmlFor={label.toLowerCase()}>
+      <label className="form-check-label ps-1" htmlFor={label.toLowerCase()}>
         {label}
       </label>
     </div>

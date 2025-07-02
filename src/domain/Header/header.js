@@ -42,7 +42,7 @@ const MenuItem = () => {
           key={j + indexj}
         >
           <a
-            className="mr-3 nav-link dropdown-toggle footerBtmlistitem headerProducts"
+            className="me-3 nav-link dropdown-toggle footerBtmlistitem headerProducts"
             href="#"
             id={MENU_DATA[0][j].title}
             role="button"
@@ -122,7 +122,7 @@ const Header = () => {
   return (
     <div className="row">
       <nav
-        className="mb-0 navbar navbar-expand-lg navbar-light container-fluid pr-15 pl-15 headerSpacing headerNavb"
+        className="mb-0 navbar navbar-expand-lg navbar-light container-fluid pr-15 ps-15 headerSpacing headerNavb"
         style={{ backgroundColor: theme.primary }}
       >
         <a className="navbar-brand" href="/">
@@ -148,21 +148,24 @@ const Header = () => {
         >
           <ul className="navbar-nav me-auto float-end">
             <li className="nav-item">
-              <AccountDropDown isLoggedIn={isLoggedIn} name={user?.first_name} />
+              <AccountDropDown
+                isLoggedIn={isLoggedIn}
+                name={user?.first_name}
+              />
             </li>
             {/* <Dropdown label={'more'} onSelect={()=>{}} options={['Notification Preferences', 'Sell on Triangle', '24/7 Customer Care', 'Advertise', 'Download App']}/> */}
-            <li className="nav-item dropdown header-more ml-2">
+            <li className="nav-item dropdown header-more ms-2">
               <HoverableDropdown label={"More"} options={Constants.MORELIST} />
             </li>
-            <li className="nav-item ml-2">
+            <li className="nav-item ms-2">
               <a className="nav-link cart-icon" href="/checkout">
-                <i className="fa fa-shopping-cart mr-2" aria-hidden="true" />
+                <i className="fa fa-shopping-cart me-2" aria-hidden="true" />
                 Cart
               </a>
             </li>
             <li className="nav-item">
-              <div
-                className="btn-group btn-group-toggle theme-toggle ml-3"
+              {/* <div
+                className="btn-group btn-group-toggle theme-toggle ms-3"
                 data-toggle="buttons"
               >
                 <label
@@ -174,14 +177,14 @@ const Header = () => {
                   }}
                 >
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="options"
-                    id="option1"
+                    id="flexSwitchCheckDefault"
                     checked={Constants.THEME_TYPES.LIGHT === selectedTheme}
                     onChange={() => changeTheme(Constants.THEME_TYPES.LIGHT)}
                   />
                   <small>
-                    <Text color={menuColor}>Light</Text>
+                    <Text color={menuColor}>Dark</Text>
                   </small>
                 </label>
                 <label
@@ -202,6 +205,18 @@ const Header = () => {
                   <small>
                     <Text color={menuColor}>Dark</Text>
                   </small>
+                </label>
+              </div> */}
+              <div className="form-check form-switch py-2 ms-3">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="flexSwitchCheckDefault"
+                  checked={Constants.THEME_TYPES.DARK === selectedTheme}
+                  onChange={() => changeTheme(Constants.THEME_TYPES.LIGHT === selectedTheme ? Constants.THEME_TYPES.DARK : Constants.THEME_TYPES.LIGHT)}
+                />
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+                  Dark
                 </label>
               </div>
             </li>

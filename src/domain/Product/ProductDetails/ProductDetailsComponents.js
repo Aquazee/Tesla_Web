@@ -86,7 +86,7 @@ const OfferListItems = ({ name, hyperlink }) => {
       <img alt="offer" src={BadgeIcon} />
       {name}
       {hyperlink && (
-        <a href="#" className="ml-1 txt-primary">
+        <a href="#" className="ms-1 txt-primary">
           T & C
         </a>
       )}
@@ -216,11 +216,11 @@ const ProductFaq = () => {
             </small>
           </div>
           <div className="col-4 likesection">
-            <span className="btn btn-link cusor-pointer light-grey text-decoration-none m-0 pl-0">
+            <span className="btn btn-link cusor-pointer light-grey text-decoration-none m-0 ps-0">
               <i className="fa fa-thumbs-up m-2 " aria-hidden="true" />
               <span id="likecount">24</span>
             </span>
-            <span className="btn btn-link cusor-pointer light-grey text-decoration-none m-0 pl-0">
+            <span className="btn btn-link cusor-pointer light-grey text-decoration-none m-0 ps-0">
               <i className="fa fa-thumbs-down m-2 " aria-hidden="true" />
               <span id="unlikecount">1</span>
             </span>
@@ -330,7 +330,7 @@ const ComboOffers = () => {
           {" "}
           <a href="#" data-abc="true">
             {" "}
-            <span className="ml-auto view-all" />{" "}
+            <span className="ms-auto view-all" />{" "}
           </a>{" "}
         </div>
       </div>
@@ -355,7 +355,7 @@ const ComboOffers = () => {
                       <span />
                     </span>
                   </strike>{" "}
-                  <span className="ml-auto">
+                  <span className="ms-auto">
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
@@ -368,7 +368,7 @@ const ComboOffers = () => {
                 >
                   {" "}
                   <span style={{ marginTop: -4 }}>₹30,000</span>{" "}
-                  <span className="ml-auto fs-10">23 Reviews</span>{" "}
+                  <span className="ms-auto fs-10">23 Reviews</span>{" "}
                 </div>{" "}
                 <span>Acer laptop with 10GB RAM + 500 GB Hard Disk</span>
               </div>
@@ -395,7 +395,7 @@ const ComboOffers = () => {
                       <span />
                     </span>
                   </strike>{" "}
-                  <span className="ml-auto">
+                  <span className="ms-auto">
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
@@ -408,7 +408,7 @@ const ComboOffers = () => {
                 >
                   {" "}
                   <span style={{ marginTop: -4 }}>₹30,000</span>{" "}
-                  <span className="ml-auto fs-10">23 Reviews</span>{" "}
+                  <span className="ms-auto fs-10">23 Reviews</span>{" "}
                 </div>{" "}
                 <span>Acer laptop with 10GB RAM + 500 GB Hard Disk</span>
               </div>
@@ -474,7 +474,7 @@ const ComboOffers = () => {
                       <span />
                     </span>
                   </strike>{" "}
-                  <span className="ml-auto">
+                  <span className="ms-auto">
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating p-rating" />
@@ -487,7 +487,7 @@ const ComboOffers = () => {
                 >
                   {" "}
                   <span style={{ marginTop: -4 }}>₹30,000</span>{" "}
-                  <span className="ml-auto fs-10">23 Reviews</span>{" "}
+                  <span className="ms-auto fs-10">23 Reviews</span>{" "}
                 </div>{" "}
                 <span>Acer laptop with 10GB RAM + 500 GB Hard Disk</span>
               </div>
@@ -514,7 +514,7 @@ const ComboOffers = () => {
                       <span />
                     </span>
                   </strike>{" "}
-                  <span className="ml-auto">
+                  <span className="ms-auto">
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
                     <i className="fa fa-star p-rating" />
@@ -527,7 +527,7 @@ const ComboOffers = () => {
                 >
                   {" "}
                   <span style={{ marginTop: -4 }}>₹30,000</span>{" "}
-                  <span className="ml-auto fs-10">23 Reviews</span>{" "}
+                  <span className="ms-auto fs-10">23 Reviews</span>{" "}
                 </div>{" "}
                 <span>Acer laptop with 10GB RAM + 500 GB Hard Disk</span>
               </div>

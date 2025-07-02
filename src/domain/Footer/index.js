@@ -12,7 +12,7 @@ function Footer() {
           <div className="row">
             <div className="col-3">
               <ul className="list-group list-group-flush opacity-0">
-                <li className="list-group-item border-0 pl-3" style={styles.header}>
+                <li className="list-group-item border-0 ps-3" style={styles.header}>
                   ABOUT
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -26,7 +26,7 @@ function Footer() {
                   </a>
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
-                  <a href="#" style={styles.listitem}>
+                  <a href="#" className='text-light'>
                     Careers
                   </a>
                 </li>
@@ -44,7 +44,7 @@ function Footer() {
             </div>
             <div className="col-3">
               <ul className="list-group list-group-flush opacity-0">
-                <li className="list-group-item border-0 pl-3" style={styles.header}>
+                <li className="list-group-item border-0 ps-3" style={styles.header}>
                   HELP
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -76,7 +76,7 @@ function Footer() {
             </div>
             <div className="col-3">
               <ul className="list-group list-group-flush opacity-0">
-                <li className="list-group-item border-0 pl-3" style={styles.header}>
+                <li className="list-group-item border-0 ps-3" style={styles.header}>
                   POLICY
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -113,7 +113,7 @@ function Footer() {
             </div>
             <div className="col-3">
               <ul className="list-group list-group-flush opacity-0">
-                <li className="list-group-item border-0 pl-3" style={styles.header}>
+                <li className="list-group-item border-0 ps-3" style={styles.header}>
                   SOCIAL
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -139,7 +139,7 @@ function Footer() {
           <div className="row">
             <div className="col-4">
               <ul className="list-group list-group-flush opacity-0">
-                <li className="list-group-item border-0 pl-3" style={styles.header}>
+                <li className="list-group-item border-0 ps-3" style={styles.header}>
                   Mail Us
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -155,7 +155,7 @@ function Footer() {
             </div>
             <div className="col-8">
               <ul className="list-group list-group-flush opacity-0">
-                <li className="list-group-item border-0 pl-3" style={styles.header}>
+                <li className="list-group-item border-0 ps-3" style={styles.header}>
                   Registered Office Address:
                 </li>
                 <li className="list-group-item border-0" style={styles.transparent}>
@@ -183,7 +183,7 @@ export default Footer;
 
 const FooterBottomListItem = ({ name, url, icon }) => {
     return (<a className="nav-link" style={styles.footerBtmlistitem} href={url}>
-      <i className={`${icon} mr-2`} />
+      <i className={`${icon} me-2`} />
       {name}
     </a>
   );

@@ -7,7 +7,7 @@ import "./style.css";
 
 const RoundedUserBorderIcon = () => (
   <div
-    className="rounded-circle w-auto text-center border border-secondary mr-3 ml-2"
+    className="rounded-circle w-auto text-center border border-secondary me-3 ms-2"
     style={{ padding: 15, marginBottom: 0, minWidth: 58 }}
   >
     <i className="fa fa-user" />
@@ -29,7 +29,7 @@ function Account() {
     <div className="col-12 mt-3 mb-3">
       <div className="row">
         <div className="col-3 offset-1">
-          <div id="" className="bg-white p-2 pl-4 card">
+          <div id="" className="bg-white p-2 ps-4 card">
             <ul className="mb-0">
               <li className="filter_title">
                 <div className="row">
@@ -43,7 +43,7 @@ function Account() {
             </ul>
           </div>
           <div id="" className="nav nav-tabs mt-3 card">
-            <ul className="Account-side_sect mb-0">
+            <ul className="Account-side_sect mb-0 ps-0">
               <li className="text-secondary text-uppercase">
                 <a className="nav-link" href="/myorders">
                   <i className="fa fa-suitcase" /> My Orders

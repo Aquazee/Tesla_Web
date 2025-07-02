@@ -62,7 +62,7 @@ function Item({ item }) {
       ? `${item.brands.splice(0, 2).join(', ')}, more`
       : item.brands.join(', ');
   return (
-    <a className="card DItem text-dark" href="/product">
+    <a className="card DItem text-dark text-decoration-none" href="/product">
       <img className="d-block" alt="Hindware" src={item.img} />
       <div className="content">
         <p className="h5">{item.name}</p>

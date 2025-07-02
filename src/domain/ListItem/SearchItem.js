@@ -22,7 +22,7 @@ const SearchItem = ({ path = "/product/mac", ...props }) => {
       href="/product"
       target="_blank"
       url={path}
-      className="row btn-link text-left text-decoration-none search-item"
+      className="row btn-link text-left text-decoration-none search-item p-2"
       onClick={onAction}
     >
       <div className="col-2 position-relative search-item-img-cont py-4">
@@ -37,7 +37,7 @@ const SearchItem = ({ path = "/product/mac", ...props }) => {
             <div className="text-left">
               <span className="badge badge-success">
                 {props.review_and_ratings.rating}
-                <i className="ml-1 fa fa-star" />
+                <i className="ms-1 fa fa-star" />
               </span>
               <span className="rating-review">
                 {props.review_and_ratings.rated_customer_count} Ratings &{" "}
@@ -47,7 +47,7 @@ const SearchItem = ({ path = "/product/mac", ...props }) => {
           )}
         </div>
         <div className="pull-left">
-          <ul style={{ marginLeft: 14, marginTop: 11 }}>
+          <ul>
             <li className="li-disc">
               Stylish & Portable Thin and Light Laptop{" "}
             </li>
@@ -74,7 +74,7 @@ const AddToCompare = () => {
 
   return (
     <div
-      className="form-check prt_compare"
+      className="form-check prt_compare ms-3"
       role="button"
       onClick={onAddToCompareClick}
     >

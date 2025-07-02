@@ -5,7 +5,7 @@ const MoreListItems = ({ name, path, icon }) => {
     <>
       <div className="dropdown-divider" />
       <a className="dropdown-item" href={path}>
-        <i className={`${icon} mr-3`} />
+        <i className={`${icon} me-3`} />
         {name}
       </a>
     </>
