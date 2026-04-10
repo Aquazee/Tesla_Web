@@ -7,14 +7,11 @@ import personalInformationSchema from "../../schema/personal-information.schema"
 import UseYupValidationResolver from "utils/UseYupValidationResolver";
 
 const PersonalInformation = () => {
-  const {
-    handleSubmit,
-    reset,
-    watch,
-    formState: { errors },
-    register,
-  } = useForm({ resolver: UseYupValidationResolver(personalInformationSchema) });
+  const { handleSubmit, reset, formState, register } = useForm({
+    resolver: UseYupValidationResolver(personalInformationSchema),
+  });
 
+  const { errors, isSubmitting } = formState;
   const onSubmit1 = async (data) => {
     if (data) {
       // const resp = await login(data)
@@ -25,15 +22,18 @@ const PersonalInformation = () => {
   };
 
   const onSubmit = (data) => {
-    console.log('Personal info: ', data);
-  }
+    console.log("Personal info: ", data);
+  };
 
   const onEditClick = () => {};
 
-  console.log(watch("example"));
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className=""
+      name="personal-information"
+      onSubmit={handleSubmit(onSubmit)}
+      disabled={isSubmitting}
+    >
       <div
         className="tab-pane fade show active p-4"
         id="profile_information"
@@ -116,7 +116,9 @@ const PersonalInformation = () => {
           />
         </div>
         {/* <Button className="btn-primary mt-2" value="Save" type="submit"/> */}
-        <Button type="submit" className="btn-outline-warning">Save</Button>
+        <Button type="submit" className="btn-outline-warning">
+          Save
+        </Button>
       </div>
     </form>
   );
